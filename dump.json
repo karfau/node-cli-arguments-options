@@ -1,0 +1,12 @@
+[
+  "",
+  "--flag",
+  "--count",
+  "--count --count",
+  "--str abc",
+  "--arr abc",
+  "--arr abc --arr def",
+  "first",
+  "first second",
+  "--help"
+]

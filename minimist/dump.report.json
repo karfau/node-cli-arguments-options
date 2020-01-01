@@ -1,0 +1,108 @@
+{
+  "": {
+    "duration": "57671266",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js"
+    ]
+  },
+  "--flag": {
+    "duration": "54072371",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js",
+      "--flag"
+    ]
+  },
+  "--count": {
+    "duration": "54704264",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js",
+      "--count"
+    ]
+  },
+  "--count --count": {
+    "duration": "54816760",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js",
+      "--count",
+      "--count"
+    ]
+  },
+  "--str abc": {
+    "duration": "55017345",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js",
+      "--str",
+      "abc"
+    ]
+  },
+  "--arr abc": {
+    "duration": "53991563",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js",
+      "--arr",
+      "abc"
+    ]
+  },
+  "--arr abc --arr def": {
+    "duration": "64910121",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js",
+      "--arr",
+      "abc",
+      "--arr",
+      "def"
+    ]
+  },
+  "first": {
+    "duration": "56286613",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js",
+      "first"
+    ]
+  },
+  "first second": {
+    "duration": "55497714",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js",
+      "first",
+      "second"
+    ]
+  },
+  "--help": {
+    "duration": "56684358",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/minimist/dump.js",
+      "--help"
+    ]
+  }
+}
