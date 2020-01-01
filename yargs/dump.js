@@ -1,6 +1,7 @@
 const yargs = require('yargs');
-//TODO: add the simplest code to support entries in ../dump.json
-const parsed = process.argv;
+const parsed = yargs.argv;
+// count requires custom code after parsing:
+if (parsed.count) {
+  parsed.count = parsed.count === true ? 1 : parsed.count.length
+}
 console.log(JSON.stringify(parsed))
-//TODO: remove this line and the next one to mark as ready
-process.exit(255)
