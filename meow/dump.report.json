@@ -1,6 +1,6 @@
 {
   "": {
-    "duration": "321609016",
+    "duration": "80803263",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -9,7 +9,7 @@
     ]
   },
   "--flag": {
-    "duration": "81822452",
+    "duration": "79826626",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -19,7 +19,7 @@
     ]
   },
   "--count": {
-    "duration": "77182028",
+    "duration": "78082317",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -29,7 +29,7 @@
     ]
   },
   "--count --count": {
-    "duration": "76949962",
+    "duration": "78201965",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -40,7 +40,7 @@
     ]
   },
   "--str abc": {
-    "duration": "81439438",
+    "duration": "80683866",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -51,7 +51,7 @@
     ]
   },
   "--arr abc": {
-    "duration": "76787146",
+    "duration": "77206389",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -62,7 +62,7 @@
     ]
   },
   "--arr abc --arr def": {
-    "duration": "77658047",
+    "duration": "79370910",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -75,7 +75,7 @@
     ]
   },
   "first": {
-    "duration": "76830274",
+    "duration": "80205390",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -85,7 +85,7 @@
     ]
   },
   "first second": {
-    "duration": "76590411",
+    "duration": "96761674",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -96,12 +96,33 @@
     ]
   },
   "--help": {
-    "duration": "78072497",
+    "duration": "97337507",
     "exitCode": 255,
     "stderr": "",
     "data": [
       "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
       "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
+      "--help"
+    ]
+  },
+  "--flag --count --count --str abc --arr abc --arr def first second --help": {
+    "duration": "82651362",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
+      "--flag",
+      "--count",
+      "--count",
+      "--str",
+      "abc",
+      "--arr",
+      "abc",
+      "--arr",
+      "def",
+      "first",
+      "second",
       "--help"
     ]
   }

@@ -5,22 +5,24 @@ const {writeJsonSync} = require('fs-extra')
 const path = require('path')
 
 function execDump (pkg, args) {
-  let stderr = '', stdout = ''
-  let duration = NaN, exitCode = 0
+  let stderr, stdout = ''
+  let duration = NaN, exitCode = undefined
   const start = process.hrtime.bigint()
   try {
-    const cp = execSync(`node ./${pkg}/dump.js ${args}`, {encoding: 'utf8'})
-    // console.error(cp.stdout)
-    stderr = cp.stderr
-    stdout = cp.stdout
+    stdout = execSync(`node ./${pkg}/dump.js ${args}`, {encoding: 'utf8', stdio: 'pipe'})
   } catch (err) {
     exitCode = err.status
     stderr = err.stderr
     stdout = err.stdout
-    // console.error(err)
   }
-  duration = process.hrtime.bigint() - start
-  return {duration: duration.toString(), exitCode, stderr, data: JSON.parse(stdout)}
+  duration = (process.hrtime.bigint() - start).toString()
+  let data = {};
+  try {
+    data = JSON.parse(stdout)
+  } catch (err) {
+    data.error = err.message
+  }
+  return {duration: duration.toString(), exitCode, stderr, data}
 }
 
 function runPkg (pkg) {

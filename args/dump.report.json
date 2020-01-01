@@ -1,6 +1,6 @@
 {
   "": {
-    "duration": "90607353",
+    "duration": "82361072",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -9,7 +9,7 @@
     ]
   },
   "--flag": {
-    "duration": "87534465",
+    "duration": "79962963",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -19,7 +19,7 @@
     ]
   },
   "--count": {
-    "duration": "78347142",
+    "duration": "81166648",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -29,7 +29,7 @@
     ]
   },
   "--count --count": {
-    "duration": "77072160",
+    "duration": "73232577",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -40,7 +40,7 @@
     ]
   },
   "--str abc": {
-    "duration": "73702258",
+    "duration": "71946407",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -51,7 +51,7 @@
     ]
   },
   "--arr abc": {
-    "duration": "75163774",
+    "duration": "72054516",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -62,7 +62,7 @@
     ]
   },
   "--arr abc --arr def": {
-    "duration": "76052384",
+    "duration": "70930109",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -75,7 +75,7 @@
     ]
   },
   "first": {
-    "duration": "79750138",
+    "duration": "78391694",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -85,7 +85,7 @@
     ]
   },
   "first second": {
-    "duration": "73308315",
+    "duration": "70319855",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -96,12 +96,33 @@
     ]
   },
   "--help": {
-    "duration": "72967925",
+    "duration": "70074257",
     "exitCode": 255,
     "stderr": "",
     "data": [
       "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
       "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
+      "--help"
+    ]
+  },
+  "--flag --count --count --str abc --arr abc --arr def first second --help": {
+    "duration": "71058063",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
+      "--flag",
+      "--count",
+      "--count",
+      "--str",
+      "abc",
+      "--arr",
+      "abc",
+      "--arr",
+      "def",
+      "first",
+      "second",
       "--help"
     ]
   }

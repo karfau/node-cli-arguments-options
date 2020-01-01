@@ -1,6 +1,6 @@
 {
   "": {
-    "duration": "166620186",
+    "duration": "74542232",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -9,7 +9,7 @@
     ]
   },
   "--flag": {
-    "duration": "71318858",
+    "duration": "74388075",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -19,7 +19,7 @@
     ]
   },
   "--count": {
-    "duration": "72016392",
+    "duration": "73671294",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -29,7 +29,7 @@
     ]
   },
   "--count --count": {
-    "duration": "74060551",
+    "duration": "77788161",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -40,7 +40,7 @@
     ]
   },
   "--str abc": {
-    "duration": "72237667",
+    "duration": "71758451",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -51,7 +51,7 @@
     ]
   },
   "--arr abc": {
-    "duration": "75380473",
+    "duration": "71703451",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -62,7 +62,7 @@
     ]
   },
   "--arr abc --arr def": {
-    "duration": "72166171",
+    "duration": "72835835",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -75,7 +75,7 @@
     ]
   },
   "first": {
-    "duration": "71404277",
+    "duration": "71693884",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -85,7 +85,7 @@
     ]
   },
   "first second": {
-    "duration": "71815951",
+    "duration": "74198878",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -96,12 +96,33 @@
     ]
   },
   "--help": {
-    "duration": "75204630",
+    "duration": "133393795",
     "exitCode": 255,
     "stderr": "",
     "data": [
       "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
       "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/yargs/dump.js",
+      "--help"
+    ]
+  },
+  "--flag --count --count --str abc --arr abc --arr def first second --help": {
+    "duration": "136360559",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/yargs/dump.js",
+      "--flag",
+      "--count",
+      "--count",
+      "--str",
+      "abc",
+      "--arr",
+      "abc",
+      "--arr",
+      "def",
+      "first",
+      "second",
       "--help"
     ]
   }

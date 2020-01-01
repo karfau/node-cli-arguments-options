@@ -1,6 +1,6 @@
 {
   "": {
-    "duration": "58859722",
+    "duration": "57773284",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -9,7 +9,7 @@
     ]
   },
   "--flag": {
-    "duration": "58764088",
+    "duration": "59654172",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -19,7 +19,7 @@
     ]
   },
   "--count": {
-    "duration": "61182778",
+    "duration": "58408410",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -29,7 +29,7 @@
     ]
   },
   "--count --count": {
-    "duration": "58109416",
+    "duration": "58443203",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -40,7 +40,7 @@
     ]
   },
   "--str abc": {
-    "duration": "60722764",
+    "duration": "57964517",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -51,7 +51,7 @@
     ]
   },
   "--arr abc": {
-    "duration": "60187964",
+    "duration": "58675681",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -62,7 +62,7 @@
     ]
   },
   "--arr abc --arr def": {
-    "duration": "58233472",
+    "duration": "58880026",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -75,7 +75,7 @@
     ]
   },
   "first": {
-    "duration": "60565107",
+    "duration": "61869659",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -85,7 +85,7 @@
     ]
   },
   "first second": {
-    "duration": "57843009",
+    "duration": "59406174",
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -96,12 +96,33 @@
     ]
   },
   "--help": {
-    "duration": "63671418",
+    "duration": "63245838",
     "exitCode": 255,
     "stderr": "",
     "data": [
       "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
       "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/commander/dump.js",
+      "--help"
+    ]
+  },
+  "--flag --count --count --str abc --arr abc --arr def first second --help": {
+    "duration": "65504857",
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/commander/dump.js",
+      "--flag",
+      "--count",
+      "--count",
+      "--str",
+      "abc",
+      "--arr",
+      "abc",
+      "--arr",
+      "def",
+      "first",
+      "second",
       "--help"
     ]
   }

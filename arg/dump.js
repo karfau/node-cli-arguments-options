@@ -1,6 +1,8 @@
 const arg = require('arg');
-//TODO: add the simplest code to support entries in ../dump.json
-const parsed = process.argv;
-console.log(JSON.stringify(parsed))
-//TODO: remove this line and the next one to mark as ready
-process.exit(255)
+console.log(JSON.stringify(arg({
+  '--flag': Boolean,
+  '--count': arg.COUNT,
+  '--str': String,
+  '--arr': [String],
+  '--help': Boolean
+})))

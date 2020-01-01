@@ -8,5 +8,6 @@
   "--arr abc --arr def",
   "first",
   "first second",
-  "--help"
+  "--help",
+  "--flag --count --count --str abc --arr abc --arr def first second --help"
 ]

@@ -1,108 +1,96 @@
 {
   "": {
-    "duration": "55703004",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js"
-    ]
+    "duration": "80107130",
+    "data": {
+      "_": []
+    }
   },
   "--flag": {
-    "duration": "54146464",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js",
-      "--flag"
-    ]
+    "duration": "102134670",
+    "data": {
+      "_": [],
+      "--flag": true
+    }
   },
   "--count": {
-    "duration": "55111003",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js",
-      "--count"
-    ]
+    "duration": "61650183",
+    "data": {
+      "_": [],
+      "--count": 1
+    }
   },
   "--count --count": {
-    "duration": "55474050",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js",
-      "--count",
-      "--count"
-    ]
+    "duration": "69390911",
+    "data": {
+      "_": [],
+      "--count": 2
+    }
   },
   "--str abc": {
-    "duration": "54087549",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js",
-      "--str",
-      "abc"
-    ]
+    "duration": "58234031",
+    "data": {
+      "_": [],
+      "--str": "abc"
+    }
   },
   "--arr abc": {
-    "duration": "54614725",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js",
-      "--arr",
-      "abc"
-    ]
+    "duration": "60002227",
+    "data": {
+      "_": [],
+      "--arr": [
+        "abc"
+      ]
+    }
   },
   "--arr abc --arr def": {
-    "duration": "54390771",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js",
-      "--arr",
-      "abc",
-      "--arr",
-      "def"
-    ]
+    "duration": "59049259",
+    "data": {
+      "_": [],
+      "--arr": [
+        "abc",
+        "def"
+      ]
+    }
   },
   "first": {
-    "duration": "54328189",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js",
-      "first"
-    ]
+    "duration": "58175398",
+    "data": {
+      "_": [
+        "first"
+      ]
+    }
   },
   "first second": {
-    "duration": "58122869",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js",
-      "first",
-      "second"
-    ]
+    "duration": "57609919",
+    "data": {
+      "_": [
+        "first",
+        "second"
+      ]
+    }
   },
   "--help": {
-    "duration": "54094232",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/arg/dump.js",
-      "--help"
-    ]
+    "duration": "64205705",
+    "data": {
+      "_": [],
+      "--help": true
+    }
+  },
+  "--flag --count --count --str abc --arr abc --arr def first second --help": {
+    "duration": "61948120",
+    "data": {
+      "_": [
+        "first",
+        "second"
+      ],
+      "--flag": true,
+      "--count": 2,
+      "--str": "abc",
+      "--arr": [
+        "abc",
+        "def"
+      ],
+      "--help": true
+    }
   }
 }
