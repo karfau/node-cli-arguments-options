@@ -1,6 +1,6 @@
 {
   "": {
-    "duration": 80,
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -19,7 +19,7 @@
     ]
   },
   "--count": {
-    "duration": 70,
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -39,15 +39,25 @@
       "--count"
     ]
   },
-  "--str abc": {
-    "duration": 80,
+  "--str xyz": {
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": [
       "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
       "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/yargs/dump.js",
       "--str",
-      "abc"
+      "xyz"
+    ]
+  },
+  "--str=xyz": {
+    "duration": 70,
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/yargs/dump.js",
+      "--str=xyz"
     ]
   },
   "--arr abc": {
@@ -61,17 +71,37 @@
       "abc"
     ]
   },
-  "--arr abc --arr def": {
+  "--arr=abc": {
     "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": [
       "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
       "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/yargs/dump.js",
-      "--arr",
-      "abc",
+      "--arr=abc"
+    ]
+  },
+  "--arr=abc --arr def": {
+    "duration": 70,
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/yargs/dump.js",
+      "--arr=abc",
       "--arr",
       "def"
+    ]
+  },
+  "--arr=abc --arr=def": {
+    "duration": 70,
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/yargs/dump.js",
+      "--arr=abc",
+      "--arr=def"
     ]
   },
   "first": {
@@ -85,7 +115,7 @@
     ]
   },
   "first second": {
-    "duration": 80,
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -105,8 +135,8 @@
       "--help"
     ]
   },
-  "--flag --count --count --str abc --arr abc --arr def first second --help": {
-    "duration": 80,
+  "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -115,12 +145,9 @@
       "--flag",
       "--count",
       "--count",
-      "--str",
-      "abc",
-      "--arr",
-      "abc",
-      "--arr",
-      "def",
+      "--str=xyz",
+      "--arr=abc",
+      "--arr=def",
       "first",
       "second",
       "--help"

@@ -1,6 +1,11 @@
 const argv = require('argv');
-//TODO: add the simplest code to support entries in ../dump.json
-const parsed = process.argv;
+
+let counter = 0;
+const parsed = argv
+  .option({name: 'flag', type: 'boolean'})
+  .type('count', () => ++counter)
+  .option({name: 'count', type: 'count'})
+  .option({name: 'str', type: 'string'})
+  .option({name: 'arr', type: 'list,string'})
+  .run();
 console.log(JSON.stringify(parsed))
-//TODO: remove this line and the next one to mark as ready
-process.exit(255)

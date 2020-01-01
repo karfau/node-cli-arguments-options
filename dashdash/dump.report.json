@@ -9,7 +9,7 @@
     ]
   },
   "--flag": {
-    "duration": 60,
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -19,7 +19,7 @@
     ]
   },
   "--count": {
-    "duration": 60,
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -29,7 +29,7 @@
     ]
   },
   "--count --count": {
-    "duration": 60,
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -39,7 +39,7 @@
       "--count"
     ]
   },
-  "--str abc": {
+  "--str xyz": {
     "duration": 60,
     "exitCode": 255,
     "stderr": "",
@@ -47,7 +47,17 @@
       "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
       "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/dashdash/dump.js",
       "--str",
-      "abc"
+      "xyz"
+    ]
+  },
+  "--str=xyz": {
+    "duration": 60,
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/dashdash/dump.js",
+      "--str=xyz"
     ]
   },
   "--arr abc": {
@@ -61,17 +71,37 @@
       "abc"
     ]
   },
-  "--arr abc --arr def": {
+  "--arr=abc": {
     "duration": 60,
     "exitCode": 255,
     "stderr": "",
     "data": [
       "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
       "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/dashdash/dump.js",
-      "--arr",
-      "abc",
+      "--arr=abc"
+    ]
+  },
+  "--arr=abc --arr def": {
+    "duration": 60,
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/dashdash/dump.js",
+      "--arr=abc",
       "--arr",
       "def"
+    ]
+  },
+  "--arr=abc --arr=def": {
+    "duration": 60,
+    "exitCode": 255,
+    "stderr": "",
+    "data": [
+      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
+      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/dashdash/dump.js",
+      "--arr=abc",
+      "--arr=def"
     ]
   },
   "first": {
@@ -105,7 +135,7 @@
       "--help"
     ]
   },
-  "--flag --count --count --str abc --arr abc --arr def first second --help": {
+  "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
     "duration": 60,
     "exitCode": 255,
     "stderr": "",
@@ -115,12 +145,9 @@
       "--flag",
       "--count",
       "--count",
-      "--str",
-      "abc",
-      "--arr",
-      "abc",
-      "--arr",
-      "def",
+      "--str=xyz",
+      "--arr=abc",
+      "--arr=def",
       "first",
       "second",
       "--help"

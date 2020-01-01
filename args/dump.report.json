@@ -1,6 +1,6 @@
 {
   "": {
-    "duration": 80,
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": {
@@ -11,7 +11,7 @@
     }
   },
   "--flag": {
-    "duration": 80,
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": {
@@ -24,7 +24,7 @@
     }
   },
   "--count": {
-    "duration": 80,
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": {
@@ -55,8 +55,8 @@
       "arr": []
     }
   },
-  "--str abc": {
-    "duration": 80,
+  "--str xyz": {
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": {
@@ -64,11 +64,39 @@
       "count": [],
       "a": [],
       "arr": [],
-      "s": "abc",
-      "str": "abc"
+      "s": "xyz",
+      "str": "xyz"
+    }
+  },
+  "--str=xyz": {
+    "duration": 70,
+    "exitCode": 255,
+    "stderr": "",
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [],
+      "arr": [],
+      "s": "xyz",
+      "str": "xyz"
     }
   },
   "--arr abc": {
+    "duration": 70,
+    "exitCode": 255,
+    "stderr": "",
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [
+        "abc"
+      ],
+      "arr": [
+        "abc"
+      ]
+    }
+  },
+  "--arr=abc": {
     "duration": 80,
     "exitCode": 255,
     "stderr": "",
@@ -83,8 +111,25 @@
       ]
     }
   },
-  "--arr abc --arr def": {
+  "--arr=abc --arr def": {
     "duration": 70,
+    "exitCode": 255,
+    "stderr": "",
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [
+        "abc",
+        "def"
+      ],
+      "arr": [
+        "abc",
+        "def"
+      ]
+    }
+  },
+  "--arr=abc --arr=def": {
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": {
@@ -112,7 +157,7 @@
     }
   },
   "first second": {
-    "duration": 80,
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
     "data": {
@@ -123,13 +168,13 @@
     }
   },
   "--help": {
-    "duration": 70,
+    "duration": 80,
     "data": {
       "error": "Unexpected token U in JSON at position 2",
       "stdout": "  Usage: dump.js [options] [command]\n  \n  Commands:\n    help     Display help\n    version  Display version\n  \n  Options:\n    -a, --arr <list>    collect (defaults to [])\n    -c, --count <list>  counts (defaults to [])\n    -f, --flag          undefined\n    -h, --help          Output usage information\n    -s, --str           undefined\n    -v, --version       Output the version number\n  \n"
     }
   },
-  "--flag --count --count --str abc --arr abc --arr def first second --help": {
+  "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
     "duration": 70,
     "data": {
       "error": "Unexpected token U in JSON at position 2",

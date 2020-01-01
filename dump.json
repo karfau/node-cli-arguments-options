@@ -3,11 +3,14 @@
   "--flag",
   "--count",
   "--count --count",
-  "--str abc",
+  "--str xyz",
+  "--str=xyz",
   "--arr abc",
-  "--arr abc --arr def",
+  "--arr=abc",
+  "--arr=abc --arr def",
+  "--arr=abc --arr=def",
   "first",
   "first second",
   "--help",
-  "--flag --count --count --str abc --arr abc --arr def first second --help"
+  "--flag --count --count --str=xyz --arr=abc --arr=def first second --help"
 ]
