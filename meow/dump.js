@@ -1,6 +1,8 @@
 const meow = require('meow');
-//TODO: add the simplest code to support entries in ../dump.json
-const parsed = process.argv;
-console.log(JSON.stringify(parsed))
-//TODO: remove this line and the next one to mark as ready
-process.exit(255)
+// all arguments expect count are parsed as expected without any
+const {input, flags} = meow()
+// count requires custom code after parsing:
+if (flags.count) {
+  flags.count = flags.count === true ? 1 : flags.count.length
+}
+console.log(JSON.stringify({input, flags}))

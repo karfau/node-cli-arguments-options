@@ -1,156 +1,141 @@
 {
   "": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js"
-    ]
+    "duration": 130,
+    "data": {
+      "input": [],
+      "flags": {}
+    }
   },
   "--flag": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--flag"
-    ]
+    "duration": 120,
+    "data": {
+      "input": [],
+      "flags": {
+        "flag": true
+      }
+    }
   },
   "--count": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--count"
-    ]
+    "duration": 130,
+    "data": {
+      "input": [],
+      "flags": {
+        "count": 1
+      }
+    }
   },
   "--count --count": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--count",
-      "--count"
-    ]
+    "duration": 140,
+    "data": {
+      "input": [],
+      "flags": {
+        "count": 2
+      }
+    }
   },
   "--str xyz": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--str",
-      "xyz"
-    ]
+    "duration": 120,
+    "data": {
+      "input": [],
+      "flags": {
+        "str": "xyz"
+      }
+    }
   },
   "--str=xyz": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--str=xyz"
-    ]
+    "duration": 140,
+    "data": {
+      "input": [],
+      "flags": {
+        "str": "xyz"
+      }
+    }
   },
   "--arr abc": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--arr",
-      "abc"
-    ]
+    "duration": 120,
+    "data": {
+      "input": [],
+      "flags": {
+        "arr": "abc"
+      }
+    }
   },
   "--arr=abc": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--arr=abc"
-    ]
+    "duration": 150,
+    "data": {
+      "input": [],
+      "flags": {
+        "arr": "abc"
+      }
+    }
   },
   "--arr=abc --arr def": {
-    "duration": 90,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--arr=abc",
-      "--arr",
-      "def"
-    ]
+    "duration": 120,
+    "data": {
+      "input": [],
+      "flags": {
+        "arr": [
+          "abc",
+          "def"
+        ]
+      }
+    }
   },
   "--arr=abc --arr=def": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--arr=abc",
-      "--arr=def"
-    ]
+    "duration": 130,
+    "data": {
+      "input": [],
+      "flags": {
+        "arr": [
+          "abc",
+          "def"
+        ]
+      }
+    }
   },
   "first": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "first"
-    ]
+    "duration": 120,
+    "data": {
+      "input": [
+        "first"
+      ],
+      "flags": {}
+    }
   },
   "first second": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "first",
-      "second"
-    ]
+    "duration": 160,
+    "data": {
+      "input": [
+        "first",
+        "second"
+      ],
+      "flags": {}
+    }
   },
   "--help": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--help"
-    ]
+    "duration": 130,
+    "data": {
+      "error": "Unexpected end of JSON input",
+      "stdout": "\n\n"
+    }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "duration": 80,
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/meow/dump.js",
-      "--flag",
-      "--count",
-      "--count",
-      "--str=xyz",
-      "--arr=abc",
-      "--arr=def",
-      "first",
-      "second",
-      "--help"
-    ]
+    "duration": 140,
+    "data": {
+      "input": [
+        "first",
+        "second"
+      ],
+      "flags": {
+        "flag": true,
+        "count": 2,
+        "str": "xyz",
+        "arr": [
+          "abc",
+          "def"
+        ],
+        "help": true
+      }
+    }
   }
 }
