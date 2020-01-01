@@ -1,6 +1,6 @@
 const minimist = require('minimist');
-//TODO: add the simplest code to support entries in ../dump.json
-const parsed = process.argv;
+// all arguments expect count are parsed as expected with no config
+const parsed = minimist(process.argv.slice(2));
+// count is always just true, never an array
+// to use unknown option for count all other options need to be defined
 console.log(JSON.stringify(parsed))
-//TODO: remove this line and the next one to mark as ready
-process.exit(255)
