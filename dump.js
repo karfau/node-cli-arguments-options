@@ -6,8 +6,8 @@ const path = require('path')
 
 function execDump (pkg, args) {
   let stderr, stdout = ''
-  let duration = NaN, exitCode = undefined
-  const start = process.hrtime.bigint()
+  let duration, exitCode
+  const start = process.hrtime()
   try {
     stdout = execSync(`node ./${pkg}/dump.js ${args}`, {encoding: 'utf8', stdio: 'pipe'})
   } catch (err) {
@@ -15,14 +15,16 @@ function execDump (pkg, args) {
     stderr = err.stderr
     stdout = err.stdout
   }
-  duration = (process.hrtime.bigint() - start).toString()
+  // let's round to 10 milliseconds to avoid values changing all the time
+  duration = Math.round(parseInt(process.hrtime(start)[1])/(10 * 1000 * 1000)) * 10
   let data = {};
   try {
     data = JSON.parse(stdout)
   } catch (err) {
     data.error = err.message
+    data.stdout = stdout;
   }
-  return {duration: duration.toString(), exitCode, stderr, data}
+  return {duration, exitCode, stderr, data}
 }
 
 function runPkg (pkg) {

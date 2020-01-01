@@ -1,129 +1,139 @@
 {
   "": {
-    "duration": "82361072",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js"
-    ]
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [],
+      "arr": []
+    }
   },
   "--flag": {
-    "duration": "79962963",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "--flag"
-    ]
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [],
+      "arr": [],
+      "f": true,
+      "flag": true
+    }
   },
   "--count": {
-    "duration": "81166648",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "--count"
-    ]
+    "data": {
+      "c": [
+        true
+      ],
+      "count": [
+        true
+      ],
+      "a": [],
+      "arr": []
+    }
   },
   "--count --count": {
-    "duration": "73232577",
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "--count",
-      "--count"
-    ]
+    "data": {
+      "c": [
+        true,
+        true
+      ],
+      "count": [
+        true,
+        true
+      ],
+      "a": [],
+      "arr": []
+    }
   },
   "--str abc": {
-    "duration": "71946407",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "--str",
-      "abc"
-    ]
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [],
+      "arr": [],
+      "s": "abc",
+      "str": "abc"
+    }
   },
   "--arr abc": {
-    "duration": "72054516",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "--arr",
-      "abc"
-    ]
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [
+        "abc"
+      ],
+      "arr": [
+        "abc"
+      ]
+    }
   },
   "--arr abc --arr def": {
-    "duration": "70930109",
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "--arr",
-      "abc",
-      "--arr",
-      "def"
-    ]
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [
+        "abc",
+        "def"
+      ],
+      "arr": [
+        "abc",
+        "def"
+      ]
+    }
   },
   "first": {
-    "duration": "78391694",
+    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "first"
-    ]
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [],
+      "arr": []
+    }
   },
   "first second": {
-    "duration": "70319855",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "first",
-      "second"
-    ]
+    "data": {
+      "c": [],
+      "count": [],
+      "a": [],
+      "arr": []
+    }
   },
   "--help": {
-    "duration": "70074257",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "--help"
-    ]
+    "duration": 70,
+    "data": {
+      "error": "Unexpected token U in JSON at position 2",
+      "stdout": "  Usage: dump.js [options] [command]\n  \n  Commands:\n    help     Display help\n    version  Display version\n  \n  Options:\n    -a, --arr <list>    collect (defaults to [])\n    -c, --count <list>  counts (defaults to [])\n    -f, --flag          undefined\n    -h, --help          Output usage information\n    -s, --str           undefined\n    -v, --version       Output the version number\n  \n"
+    }
   },
   "--flag --count --count --str abc --arr abc --arr def first second --help": {
-    "duration": "71058063",
-    "exitCode": 255,
-    "stderr": "",
-    "data": [
-      "/home/karfau/.nvm/versions/node/v10.18.0/bin/node",
-      "/run/media/karfau/hdd-data/dev/node-cli-arguments-options/args/dump.js",
-      "--flag",
-      "--count",
-      "--count",
-      "--str",
-      "abc",
-      "--arr",
-      "abc",
-      "--arr",
-      "def",
-      "first",
-      "second",
-      "--help"
-    ]
+    "duration": 70,
+    "data": {
+      "error": "Unexpected token U in JSON at position 2",
+      "stdout": "  Usage: dump.js [options] [command]\n  \n  Commands:\n    help     Display help\n    version  Display version\n  \n  Options:\n    -a, --arr <list>    collect (defaults to [])\n    -c, --count <list>  counts (defaults to [])\n    -f, --flag          undefined\n    -h, --help          Output usage information\n    -s, --str           undefined\n    -v, --version       Output the version number\n  \n"
+    }
   }
 }

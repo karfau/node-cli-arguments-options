@@ -1,6 +1,6 @@
 {
   "": {
-    "duration": "80803263",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -9,7 +9,7 @@
     ]
   },
   "--flag": {
-    "duration": "79826626",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -19,7 +19,7 @@
     ]
   },
   "--count": {
-    "duration": "78082317",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -29,7 +29,7 @@
     ]
   },
   "--count --count": {
-    "duration": "78201965",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -40,7 +40,7 @@
     ]
   },
   "--str abc": {
-    "duration": "80683866",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -51,7 +51,7 @@
     ]
   },
   "--arr abc": {
-    "duration": "77206389",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -62,7 +62,7 @@
     ]
   },
   "--arr abc --arr def": {
-    "duration": "79370910",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -75,7 +75,7 @@
     ]
   },
   "first": {
-    "duration": "80205390",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -85,7 +85,7 @@
     ]
   },
   "first second": {
-    "duration": "96761674",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -96,7 +96,7 @@
     ]
   },
   "--help": {
-    "duration": "97337507",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
@@ -106,7 +106,7 @@
     ]
   },
   "--flag --count --count --str abc --arr abc --arr def first second --help": {
-    "duration": "82651362",
+    "duration": 80,
     "exitCode": 255,
     "stderr": "",
     "data": [
