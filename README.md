@@ -12,6 +12,7 @@ To goal is something like a mono repo, where the same checks are implemented in 
 - Features
   - code size (to support the feature)
   - execution time
+- availability of type definitions (quality/completeness ?)
 - TBD (existing?) score for maintenance/community
 
 ## Contribute
