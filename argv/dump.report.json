@@ -1,121 +1,101 @@
 {
   "": {
-    "value": {
-      "targets": [],
-      "options": {}
-    }
+    "arguments": [],
+    "options": {}
   },
   "--flag": {
-    "value": {
-      "targets": [],
-      "options": {
-        "flag": true
-      }
+    "arguments": [],
+    "options": {
+      "flag": true
     }
   },
   "--count": {
-    "value": {
-      "targets": [],
-      "options": {
-        "count": 1
-      }
+    "arguments": [],
+    "options": {
+      "count": 1
     }
   },
   "--count --count": {
-    "value": {
-      "targets": [],
-      "options": {
-        "count": 2
-      }
+    "arguments": [],
+    "options": {
+      "count": 2
     }
   },
   "--str xyz": {
-    "value": {
-      "targets": [
-        "xyz"
-      ],
-      "options": {
-        "str": "true"
-      }
+    "arguments": [
+      "xyz"
+    ],
+    "options": {
+      "str": "true"
     }
   },
   "--str=xyz": {
-    "value": {
-      "targets": [],
-      "options": {
-        "str": "xyz"
-      }
+    "arguments": [],
+    "options": {
+      "str": "xyz"
     }
   },
   "--arr abc": {
-    "value": {
-      "targets": [
-        "abc"
-      ],
-      "options": {
-        "arr": [
-          "true"
-        ]
-      }
+    "arguments": [
+      "abc"
+    ],
+    "options": {
+      "arr": [
+        "true"
+      ]
     }
   },
   "--arr=abc": {
-    "value": {
-      "targets": [],
-      "options": {
-        "arr": [
-          "abc"
-        ]
-      }
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc"
+      ]
     }
   },
   "--arr=abc --arr def": {
-    "value": {
-      "targets": [
-        "def"
-      ],
-      "options": {
-        "arr": [
-          "abc",
-          "true"
-        ]
-      }
+    "arguments": [
+      "def"
+    ],
+    "options": {
+      "arr": [
+        "abc",
+        "true"
+      ]
     }
   },
   "--arr=abc --arr=def": {
-    "value": {
-      "targets": [],
-      "options": {
-        "arr": [
-          "abc",
-          "def"
-        ]
-      }
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc",
+        "def"
+      ]
     }
   },
   "first": {
-    "value": {
-      "targets": [
-        "first"
-      ],
-      "options": {}
-    }
+    "arguments": [
+      "first"
+    ],
+    "options": {}
   },
   "first second": {
-    "value": {
-      "targets": [
-        "first",
-        "second"
-      ],
-      "options": {}
-    }
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {}
   },
   "--help": {
-    "error": "Unexpected token U in JSON at position 0",
-    "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
+    "raw": {
+      "error": "Unexpected token U in JSON at position 0",
+      "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
+    }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "error": "Unexpected token U in JSON at position 0",
-    "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
+    "raw": {
+      "error": "Unexpected token U in JSON at position 0",
+      "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
+    }
   }
 }

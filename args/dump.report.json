@@ -1,182 +1,154 @@
 {
   "": {
-    "value": {
-      "parsed": {
-        "a": [],
-        "arr": []
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [],
+      "arr": []
     }
   },
   "--flag": {
-    "value": {
-      "parsed": {
-        "a": [],
-        "arr": [],
-        "f": true,
-        "flag": true
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [],
+      "arr": [],
+      "f": true,
+      "flag": true
     }
   },
   "--count": {
-    "value": {
-      "parsed": {
-        "a": [],
-        "arr": [],
-        "c": 1,
-        "count": 1
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [],
+      "arr": [],
+      "c": 1,
+      "count": 1
     }
   },
   "--count --count": {
-    "value": {
-      "parsed": {
-        "a": [],
-        "arr": [],
-        "c": 2,
-        "count": 2
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [],
+      "arr": [],
+      "c": 2,
+      "count": 2
     }
   },
   "--str xyz": {
-    "value": {
-      "parsed": {
-        "a": [],
-        "arr": [],
-        "s": "xyz",
-        "str": "xyz"
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [],
+      "arr": [],
+      "s": "xyz",
+      "str": "xyz"
     }
   },
   "--str=xyz": {
-    "value": {
-      "parsed": {
-        "a": [],
-        "arr": [],
-        "s": "xyz",
-        "str": "xyz"
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [],
+      "arr": [],
+      "s": "xyz",
+      "str": "xyz"
     }
   },
   "--arr abc": {
-    "value": {
-      "parsed": {
-        "a": [
-          "abc"
-        ],
-        "arr": [
-          "abc"
-        ]
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [
+        "abc"
+      ],
+      "arr": [
+        "abc"
+      ]
     }
   },
   "--arr=abc": {
-    "value": {
-      "parsed": {
-        "a": [
-          "abc"
-        ],
-        "arr": [
-          "abc"
-        ]
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [
+        "abc"
+      ],
+      "arr": [
+        "abc"
+      ]
     }
   },
   "--arr=abc --arr def": {
-    "value": {
-      "parsed": {
-        "a": [
-          "abc",
-          "def"
-        ],
-        "arr": [
-          "abc",
-          "def"
-        ]
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [
+        "abc",
+        "def"
+      ],
+      "arr": [
+        "abc",
+        "def"
+      ]
     }
   },
   "--arr=abc --arr=def": {
-    "value": {
-      "parsed": {
-        "a": [
-          "abc",
-          "def"
-        ],
-        "arr": [
-          "abc",
-          "def"
-        ]
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [
+        "abc",
+        "def"
+      ],
+      "arr": [
+        "abc",
+        "def"
+      ]
     }
   },
   "first": {
-    "value": {
-      "parsed": {
-        "a": [],
-        "arr": []
-      },
-      "sub": [
-        "first"
-      ]
+    "arguments": [
+      "first"
+    ],
+    "options": {
+      "a": [],
+      "arr": []
     }
   },
   "first second": {
-    "value": {
-      "parsed": {
-        "a": [],
-        "arr": []
-      },
-      "sub": [
-        "first",
-        "second"
-      ]
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {
+      "a": [],
+      "arr": []
     }
   },
   "--help": {
-    "value": {
-      "parsed": {
-        "a": [],
-        "arr": [],
-        "h": true,
-        "help": true
-      },
-      "sub": []
+    "arguments": [],
+    "options": {
+      "a": [],
+      "arr": [],
+      "h": true,
+      "help": true
     }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "value": {
-      "parsed": {
-        "a": [
-          "abc",
-          "def"
-        ],
-        "arr": [
-          "abc",
-          "def"
-        ],
-        "f": true,
-        "flag": true,
-        "c": 2,
-        "count": 2,
-        "s": "xyz",
-        "str": "xyz",
-        "h": true,
-        "help": true
-      },
-      "sub": [
-        "first",
-        "second"
-      ]
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {
+      "a": [
+        "abc",
+        "def"
+      ],
+      "arr": [
+        "abc",
+        "def"
+      ],
+      "f": true,
+      "flag": true,
+      "c": 2,
+      "count": 2,
+      "s": "xyz",
+      "str": "xyz",
+      "h": true,
+      "help": true
     }
   }
 }

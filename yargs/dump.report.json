@@ -1,62 +1,62 @@
 {
   "": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "$0": "yargs/dump.js"
     }
   },
   "--flag": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "flag": true,
       "$0": "yargs/dump.js"
     }
   },
   "--count": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "count": 1,
       "$0": "yargs/dump.js"
     }
   },
   "--count --count": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "count": 2,
       "$0": "yargs/dump.js"
     }
   },
   "--str xyz": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "str": "xyz",
       "$0": "yargs/dump.js"
     }
   },
   "--str=xyz": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "str": "xyz",
       "$0": "yargs/dump.js"
     }
   },
   "--arr abc": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "arr": "abc",
       "$0": "yargs/dump.js"
     }
   },
   "--arr=abc": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "arr": "abc",
       "$0": "yargs/dump.js"
     }
   },
   "--arr=abc --arr def": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "arr": [
         "abc",
         "def"
@@ -65,8 +65,8 @@
     }
   },
   "--arr=abc --arr=def": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "arr": [
         "abc",
         "def"
@@ -75,28 +75,32 @@
     }
   },
   "first": {
-    "value": {
-      "_": [
-        "first"
-      ],
+    "arguments": [
+      "first"
+    ],
+    "options": {
       "$0": "yargs/dump.js"
     }
   },
   "first second": {
-    "value": {
-      "_": [
-        "first",
-        "second"
-      ],
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {
       "$0": "yargs/dump.js"
     }
   },
   "--help": {
-    "error": "Unexpected token O in JSON at position 0",
-    "stdout": "Options:\n  --help     Show help                                                 [boolean]\n  --version  Show version number                                       [boolean]\n"
+    "raw": {
+      "error": "Unexpected token O in JSON at position 0",
+      "stdout": "Options:\n  --help     Show help                                                 [boolean]\n  --version  Show version number                                       [boolean]\n"
+    }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "error": "Unexpected token O in JSON at position 0",
-    "stdout": "Options:\n  --help     Show help                                                 [boolean]\n  --version  Show version number                                       [boolean]\n"
+    "raw": {
+      "error": "Unexpected token O in JSON at position 0",
+      "stdout": "Options:\n  --help     Show help                                                 [boolean]\n  --version  Show version number                                       [boolean]\n"
+    }
   }
 }

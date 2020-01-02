@@ -11,10 +11,8 @@ function run (pkg) {
   const dumpFile = 'dump.js'
   if (!existsSync(dumpFile))  writeFileSync(dumpFile, `const ${camelcase(pkg)} = require('${pkg}');
 //TODO: add the simplest code to support entries in ../dump.json
-const parsed = process.argv;
-console.log(JSON.stringify(parsed))
-//TODO: remove this line and the next one to mark as ready
-process.exit(255)
+const arguments = process.argv;
+console.log(JSON.stringify({arguments/*, options*/}))
 `);
   execSync(`runex about ${pkg}`)
   execSync(`runex dump ${pkg}`)

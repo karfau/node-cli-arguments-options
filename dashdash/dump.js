@@ -11,14 +11,12 @@ dashdash.addOptionType({
     return current;
   }
 });
-const options = [
+const config = {options: [
   {name: 'flag', type: 'bool'},
   {name: 'count', type: 'count'},
   {name: 'str', type: 'string'},
   {name: 'arr', type: 'arrayOfString'},
   {name: 'help', type: 'bool'}
-];
-const parsed = dashdash.parse({options});
-console.log(JSON.stringify(parsed))
-//TODO: remove this line and the next one to mark as ready
-process.exit(255)
+]};
+const {_args: arguments, ...options} = dashdash.parse(config);
+console.log(JSON.stringify({arguments, options}))

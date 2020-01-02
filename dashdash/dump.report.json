@@ -1,16 +1,13 @@
 {
   "": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
-      "_order": [],
-      "_args": []
+    "arguments": [],
+    "options": {
+      "_order": []
     }
   },
   "--flag": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "flag": true,
       "_order": [
         {
@@ -18,14 +15,12 @@
           "value": true,
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "--count": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "count": 1,
       "_order": [
         {
@@ -33,14 +28,12 @@
           "value": 1,
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "--count --count": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "count": 2,
       "_order": [
         {
@@ -53,14 +46,12 @@
           "value": 2,
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "--str xyz": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "str": "xyz",
       "_order": [
         {
@@ -68,14 +59,12 @@
           "value": "xyz",
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "--str=xyz": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "str": "xyz",
       "_order": [
         {
@@ -83,14 +72,12 @@
           "value": "xyz",
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "--arr abc": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "arr": [
         "abc"
       ],
@@ -100,14 +87,12 @@
           "value": "abc",
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "--arr=abc": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "arr": [
         "abc"
       ],
@@ -117,14 +102,12 @@
           "value": "abc",
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "--arr=abc --arr def": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "arr": [
         "abc",
         "def"
@@ -140,14 +123,12 @@
           "value": "def",
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "--arr=abc --arr=def": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "arr": [
         "abc",
         "def"
@@ -163,35 +144,29 @@
           "value": "def",
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "first": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
-      "_order": [],
-      "_args": [
-        "first"
-      ]
+    "arguments": [
+      "first"
+    ],
+    "options": {
+      "_order": []
     }
   },
   "first second": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
-      "_order": [],
-      "_args": [
-        "first",
-        "second"
-      ]
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {
+      "_order": []
     }
   },
   "--help": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [],
+    "options": {
       "help": true,
       "_order": [
         {
@@ -199,14 +174,15 @@
           "value": true,
           "from": "argv"
         }
-      ],
-      "_args": []
+      ]
     }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "exitCode": 255,
-    "stderr": "",
-    "value": {
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {
       "flag": true,
       "count": 2,
       "str": "xyz",
@@ -251,10 +227,6 @@
           "value": true,
           "from": "argv"
         }
-      ],
-      "_args": [
-        "first",
-        "second"
       ]
     }
   }

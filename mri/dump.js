@@ -1,7 +1,7 @@
 const mri = require('mri');
-const parsed = mri(process.argv.slice(2));
+const {_: arguments, ...options} = mri(process.argv.slice(2));
 // count requires custom code after parsing:
-if (parsed.count) {
-  parsed.count = parsed.count === true ? 1 : parsed.count.length
+if (options.count) {
+  options.count = options.count === true ? 1 : options.count.length
 }
-console.log(JSON.stringify(parsed))
+console.log(JSON.stringify({arguments, options}))

@@ -9,7 +9,20 @@ function runPkg (pkg) {
     path.join(pkg, 'dump.report.json'),
     dumps.reduce(
       (acc, cur) => {
-        acc[cur] = execJson(`node ./${pkg}/dump.js ${cur}`)
+        const raw = execJson(`node ./${pkg}/dump.js ${cur}`)
+        const data = {}
+        const hasOptions = raw.value && raw.value.options;
+        const hasArguments = raw.value && raw.value.arguments;
+        if (hasArguments) {
+          data.arguments = raw.value.arguments
+        }
+        if (hasOptions) {
+          data.options = raw.value.options
+        }
+        if (!hasOptions || !hasArguments) {
+          data.raw = raw;
+        }
+        acc[cur] = data
         return acc
       },
       {}

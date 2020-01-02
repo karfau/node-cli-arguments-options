@@ -5,4 +5,4 @@ const {input, flags} = meow()
 if (flags.count) {
   flags.count = flags.count === true ? 1 : flags.count.length
 }
-console.log(JSON.stringify({input, flags}))
+console.log(JSON.stringify({arguments: input, options: flags}))

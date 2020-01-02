@@ -1,54 +1,53 @@
 {
   "": {
-    "value": {
-      "_": []
-    }
+    "arguments": [],
+    "options": {}
   },
   "--flag": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "flag": true
     }
   },
   "--count": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "count": 1
     }
   },
   "--count --count": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "count": 2
     }
   },
   "--str xyz": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "str": "xyz"
     }
   },
   "--str=xyz": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "str": "xyz"
     }
   },
   "--arr abc": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "arr": "abc"
     }
   },
   "--arr=abc": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "arr": "abc"
     }
   },
   "--arr=abc --arr def": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "arr": [
         "abc",
         "def"
@@ -56,8 +55,8 @@
     }
   },
   "--arr=abc --arr=def": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "arr": [
         "abc",
         "def"
@@ -65,32 +64,30 @@
     }
   },
   "first": {
-    "value": {
-      "_": [
-        "first"
-      ]
-    }
+    "arguments": [
+      "first"
+    ],
+    "options": {}
   },
   "first second": {
-    "value": {
-      "_": [
-        "first",
-        "second"
-      ]
-    }
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {}
   },
   "--help": {
-    "value": {
-      "_": [],
+    "arguments": [],
+    "options": {
       "help": true
     }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "value": {
-      "_": [
-        "first",
-        "second"
-      ],
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {
       "flag": true,
       "count": 2,
       "str": "xyz",

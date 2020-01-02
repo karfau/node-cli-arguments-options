@@ -1,127 +1,103 @@
 {
   "": {
-    "value": {
-      "opts": {},
-      "args": []
-    }
+    "arguments": [],
+    "options": {}
   },
   "--flag": {
-    "value": {
-      "opts": {
-        "flag": true
-      },
-      "args": []
+    "arguments": [],
+    "options": {
+      "flag": true
     }
   },
   "--count": {
-    "value": {
-      "opts": {
-        "count": 1
-      },
-      "args": []
+    "arguments": [],
+    "options": {
+      "count": 1
     }
   },
   "--count --count": {
-    "value": {
-      "opts": {
-        "count": 2
-      },
-      "args": []
+    "arguments": [],
+    "options": {
+      "count": 2
     }
   },
   "--str xyz": {
-    "value": {
-      "opts": {
-        "str": "xyz"
-      },
-      "args": []
+    "arguments": [],
+    "options": {
+      "str": "xyz"
     }
   },
   "--str=xyz": {
-    "value": {
-      "opts": {
-        "str": "xyz"
-      },
-      "args": []
+    "arguments": [],
+    "options": {
+      "str": "xyz"
     }
   },
   "--arr abc": {
-    "value": {
-      "opts": {
-        "arr": [
-          "abc"
-        ]
-      },
-      "args": []
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc"
+      ]
     }
   },
   "--arr=abc": {
-    "value": {
-      "opts": {
-        "arr": [
-          "abc"
-        ]
-      },
-      "args": []
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc"
+      ]
     }
   },
   "--arr=abc --arr def": {
-    "value": {
-      "opts": {
-        "arr": [
-          "abc",
-          "def"
-        ]
-      },
-      "args": []
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc",
+        "def"
+      ]
     }
   },
   "--arr=abc --arr=def": {
-    "value": {
-      "opts": {
-        "arr": [
-          "abc",
-          "def"
-        ]
-      },
-      "args": []
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc",
+        "def"
+      ]
     }
   },
   "first": {
-    "value": {
-      "opts": {},
-      "args": [
-        "first"
-      ]
-    }
+    "arguments": [
+      "first"
+    ],
+    "options": {}
   },
   "first second": {
-    "value": {
-      "opts": {},
-      "args": [
-        "first",
-        "second"
-      ]
-    }
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {}
   },
   "--help": {
-    "error": "Unexpected token U in JSON at position 0",
-    "stdout": "Usage: dump [options] [first] [second]\n\nOptions:\n  --flag       \n  --count      counts\n  --str <val>  \n  --arr <val>  collects\n  -h, --help   output usage information\n"
+    "raw": {
+      "error": "Unexpected token U in JSON at position 0",
+      "stdout": "Usage: dump [options] [first] [second]\n\nOptions:\n  --flag       \n  --count      counts\n  --str <val>  \n  --arr <val>  collects\n  -h, --help   output usage information\n"
+    }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "value": {
-      "opts": {
-        "flag": true,
-        "count": 2,
-        "str": "xyz",
-        "arr": [
-          "abc",
-          "def"
-        ]
-      },
-      "args": [
-        "first",
-        "second"
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {
+      "flag": true,
+      "count": 2,
+      "str": "xyz",
+      "arr": [
+        "abc",
+        "def"
       ]
     }
   }

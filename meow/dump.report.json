@@ -1,125 +1,101 @@
 {
   "": {
-    "value": {
-      "input": [],
-      "flags": {}
-    }
+    "arguments": [],
+    "options": {}
   },
   "--flag": {
-    "value": {
-      "input": [],
-      "flags": {
-        "flag": true
-      }
+    "arguments": [],
+    "options": {
+      "flag": true
     }
   },
   "--count": {
-    "value": {
-      "input": [],
-      "flags": {
-        "count": 1
-      }
+    "arguments": [],
+    "options": {
+      "count": 1
     }
   },
   "--count --count": {
-    "value": {
-      "input": [],
-      "flags": {
-        "count": 2
-      }
+    "arguments": [],
+    "options": {
+      "count": 2
     }
   },
   "--str xyz": {
-    "value": {
-      "input": [],
-      "flags": {
-        "str": "xyz"
-      }
+    "arguments": [],
+    "options": {
+      "str": "xyz"
     }
   },
   "--str=xyz": {
-    "value": {
-      "input": [],
-      "flags": {
-        "str": "xyz"
-      }
+    "arguments": [],
+    "options": {
+      "str": "xyz"
     }
   },
   "--arr abc": {
-    "value": {
-      "input": [],
-      "flags": {
-        "arr": "abc"
-      }
+    "arguments": [],
+    "options": {
+      "arr": "abc"
     }
   },
   "--arr=abc": {
-    "value": {
-      "input": [],
-      "flags": {
-        "arr": "abc"
-      }
+    "arguments": [],
+    "options": {
+      "arr": "abc"
     }
   },
   "--arr=abc --arr def": {
-    "value": {
-      "input": [],
-      "flags": {
-        "arr": [
-          "abc",
-          "def"
-        ]
-      }
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc",
+        "def"
+      ]
     }
   },
   "--arr=abc --arr=def": {
-    "value": {
-      "input": [],
-      "flags": {
-        "arr": [
-          "abc",
-          "def"
-        ]
-      }
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc",
+        "def"
+      ]
     }
   },
   "first": {
-    "value": {
-      "input": [
-        "first"
-      ],
-      "flags": {}
-    }
+    "arguments": [
+      "first"
+    ],
+    "options": {}
   },
   "first second": {
-    "value": {
-      "input": [
-        "first",
-        "second"
-      ],
-      "flags": {}
-    }
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {}
   },
   "--help": {
-    "error": "Unexpected end of JSON input",
-    "stdout": "\n\n"
+    "raw": {
+      "error": "Unexpected end of JSON input",
+      "stdout": "\n\n"
+    }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "value": {
-      "input": [
-        "first",
-        "second"
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {
+      "flag": true,
+      "count": 2,
+      "str": "xyz",
+      "arr": [
+        "abc",
+        "def"
       ],
-      "flags": {
-        "flag": true,
-        "count": 2,
-        "str": "xyz",
-        "arr": [
-          "abc",
-          "def"
-        ],
-        "help": true
-      }
+      "help": true
     }
   }
 }

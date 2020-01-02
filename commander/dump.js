@@ -1,5 +1,5 @@
 const commander = require('commander');
-//TODO: add the simplest code to support entries in ../dump.json
+
 const c = commander
   .option('--flag')
   .option('--count', 'counts', (_, prev = 0) => prev + 1)
@@ -10,5 +10,5 @@ const c = commander
   })
   .arguments('[first] [second]')
   .parse(process.argv)
-  const parsed = {opts: c.opts(), args: c.args};
-console.log(JSON.stringify(parsed))
+
+console.log(JSON.stringify({options: c.opts(), arguments: c.args}))
