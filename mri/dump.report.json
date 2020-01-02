@@ -1,0 +1,104 @@
+{
+  "": {
+    "value": {
+      "_": []
+    }
+  },
+  "--flag": {
+    "value": {
+      "_": [],
+      "flag": true
+    }
+  },
+  "--count": {
+    "value": {
+      "_": [],
+      "count": 1
+    }
+  },
+  "--count --count": {
+    "value": {
+      "_": [],
+      "count": 2
+    }
+  },
+  "--str xyz": {
+    "value": {
+      "_": [],
+      "str": "xyz"
+    }
+  },
+  "--str=xyz": {
+    "value": {
+      "_": [],
+      "str": "xyz"
+    }
+  },
+  "--arr abc": {
+    "value": {
+      "_": [],
+      "arr": "abc"
+    }
+  },
+  "--arr=abc": {
+    "value": {
+      "_": [],
+      "arr": "abc"
+    }
+  },
+  "--arr=abc --arr def": {
+    "value": {
+      "_": [],
+      "arr": [
+        "abc",
+        "def"
+      ]
+    }
+  },
+  "--arr=abc --arr=def": {
+    "value": {
+      "_": [],
+      "arr": [
+        "abc",
+        "def"
+      ]
+    }
+  },
+  "first": {
+    "value": {
+      "_": [
+        "first"
+      ]
+    }
+  },
+  "first second": {
+    "value": {
+      "_": [
+        "first",
+        "second"
+      ]
+    }
+  },
+  "--help": {
+    "value": {
+      "_": [],
+      "help": true
+    }
+  },
+  "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
+    "value": {
+      "_": [
+        "first",
+        "second"
+      ],
+      "flag": true,
+      "count": 2,
+      "str": "xyz",
+      "arr": [
+        "abc",
+        "def"
+      ],
+      "help": true
+    }
+  }
+}

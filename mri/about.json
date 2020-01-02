@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "deps": [
+      "mri"
+    ],
+    "outdated": [],
+    "size": 4006,
+    "usedIn": [
+      "args"
+    ]
+  }
+}
