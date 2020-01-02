@@ -1,9 +1,11 @@
 {
   "dependencies": {
-    "list": [
+    "deps": [
       "minimist"
     ],
+    "dependents": {},
     "outdated": [],
-    "size": 7724
+    "size": 7724,
+    "usedIn": []
   }
 }

@@ -1,10 +1,12 @@
 {
   "dependencies": {
-    "list": [
+    "deps": [
       "assert-plus",
       "dashdash"
     ],
+    "dependents": {},
     "outdated": [],
-    "size": 27487
+    "size": 27487,
+    "usedIn": []
   }
 }

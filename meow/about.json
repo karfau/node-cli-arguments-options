@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "list": [
+    "deps": [
       "@babel/code-frame",
       "@babel/highlight",
       "@types/minimist",
@@ -56,7 +56,9 @@
       "validate-npm-package-license",
       "yargs-parser"
     ],
+    "dependents": {},
     "outdated": [],
-    "size": 273043
+    "size": 273043,
+    "usedIn": []
   }
 }

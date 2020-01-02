@@ -3,6 +3,7 @@ const path = require('path')
 const {execJson} = require('./execJSON')
 const {forEach, packagesIn} = require('./iterate')
 const axios = require('axios')
+const {pathExistsSync} = require('fs-extra')
 
 const cache = {}
 async function headContentLength(url) {
@@ -14,23 +15,30 @@ async function headContentLength(url) {
   return size
 }
 
-async function dependencies (pkg) {
-  const list = packagesIn('.', pkg, 'node_modules');
-  const infos = list.map(p => eval(`(${execJson(`npm info ${p} .`).stdout.trim()})`))
-  const outdated = infos.filter(i => i.version !== (i['dist-tags'] && i['dist-tags'].latest));
+const NODE_MODULES = 'node_modules'
+async function depInfo (pkg) {
+  const usedIn = packagesIn('.') // TODO check inside prominent cli tools?
+    .filter(name => name !== pkg && pathExistsSync(path.join('.', name, NODE_MODULES, pkg)))
+  const deps = packagesIn('.', pkg, NODE_MODULES);
+  const infos = deps.map(p => eval(`(${execJson(`npm info ${p} .`).stdout.trim()})`))
+  const outdated = [];
   let size = 0
-  for (const {dist} of infos) {
+  for (const {dist, name, version, ...info} of infos) {
+    const latest = info['dist-tags'] && info['dist-tags'].latest;
+    if (version !== latest) {
+      outdated.push(`${name}@${version}...${latest}`)
+    }
     size += await headContentLength(dist.tarball)
   }
-  return {list, outdated, size}
+  return {deps, outdated, size, usedIn}
 }
 
 async function runPkg (pkg) {
+  const dependencies = await depInfo(pkg)
+  console.log(JSON.stringify(dependencies, null, 2));
   writeJsonSync(
     path.join(pkg, 'about.json'),
-    {
-      dependencies: await dependencies(pkg)
-    },
+    {dependencies},
     {spaces: 2}
   )
 }

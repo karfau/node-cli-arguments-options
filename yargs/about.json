@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "list": [
+    "deps": [
       "@types/color-name",
       "ansi-regex",
       "ansi-styles",
@@ -29,7 +29,9 @@
       "yargs",
       "yargs-parser"
     ],
+    "dependents": {},
     "outdated": [],
-    "size": 168471
+    "size": 168471,
+    "usedIn": []
   }
 }

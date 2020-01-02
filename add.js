@@ -1,5 +1,6 @@
-const {existsSync, mkdirpSync, writeFileSync} = require('fs-extra');
+const camelcase = require('camelcase')
 const {execSync} = require('child_process')
+const {existsSync, mkdirpSync, writeFileSync} = require('fs-extra');
 
 function run (pkg) {
   const dir = `${pkg}`
@@ -8,7 +9,7 @@ function run (pkg) {
   execSync('npm init --scope=cliao -y', {stdio: 'inherit'})
   execSync(`npm i -D ${pkg}`, {stdio: 'inherit'})
   const dumpFile = 'dump.js'
-  /*if (!existsSync(dumpFile)) */ writeFileSync(dumpFile, `const ${pkg} = require('${pkg}');
+  /*if (!existsSync(dumpFile)) */ writeFileSync(dumpFile, `const ${camelcase(pkg)} = require('${pkg}');
 //TODO: add the simplest code to support entries in ../dump.json
 const parsed = process.argv;
 console.log(JSON.stringify(parsed))
