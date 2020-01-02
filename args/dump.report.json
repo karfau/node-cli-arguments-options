@@ -1,9 +1,8 @@
 {
   "": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [],
@@ -11,10 +10,9 @@
     }
   },
   "--flag": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [],
@@ -24,10 +22,9 @@
     }
   },
   "--count": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [
         true
       ],
@@ -39,10 +36,9 @@
     }
   },
   "--count --count": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [
         true,
         true
@@ -56,10 +52,9 @@
     }
   },
   "--str xyz": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [],
@@ -69,10 +64,9 @@
     }
   },
   "--str=xyz": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [],
@@ -82,10 +76,9 @@
     }
   },
   "--arr abc": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [
@@ -97,10 +90,9 @@
     }
   },
   "--arr=abc": {
-    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [
@@ -112,10 +104,9 @@
     }
   },
   "--arr=abc --arr def": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [
@@ -129,10 +120,9 @@
     }
   },
   "--arr=abc --arr=def": {
-    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [
@@ -146,10 +136,9 @@
     }
   },
   "first": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [],
@@ -157,10 +146,9 @@
     }
   },
   "first second": {
-    "duration": 70,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "c": [],
       "count": [],
       "a": [],
@@ -168,17 +156,11 @@
     }
   },
   "--help": {
-    "duration": 80,
-    "data": {
-      "error": "Unexpected token U in JSON at position 2",
-      "stdout": "  Usage: dump.js [options] [command]\n  \n  Commands:\n    help     Display help\n    version  Display version\n  \n  Options:\n    -a, --arr <list>    collect (defaults to [])\n    -c, --count <list>  counts (defaults to [])\n    -f, --flag          undefined\n    -h, --help          Output usage information\n    -s, --str           undefined\n    -v, --version       Output the version number\n  \n"
-    }
+    "error": "Unexpected token U in JSON at position 0",
+    "stdout": "  Usage: dump.js [options] [command]\n  \n  Commands:\n    help     Display help\n    version  Display version\n  \n  Options:\n    -a, --arr <list>    collect (defaults to [])\n    -c, --count <list>  counts (defaults to [])\n    -f, --flag          undefined\n    -h, --help          Output usage information\n    -s, --str           undefined\n    -v, --version       Output the version number\n  \n"
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "duration": 70,
-    "data": {
-      "error": "Unexpected token U in JSON at position 2",
-      "stdout": "  Usage: dump.js [options] [command]\n  \n  Commands:\n    help     Display help\n    version  Display version\n  \n  Options:\n    -a, --arr <list>    collect (defaults to [])\n    -c, --count <list>  counts (defaults to [])\n    -f, --flag          undefined\n    -h, --help          Output usage information\n    -s, --str           undefined\n    -v, --version       Output the version number\n  \n"
-    }
+    "error": "Unexpected token U in JSON at position 0",
+    "stdout": "  Usage: dump.js [options] [command]\n  \n  Commands:\n    help     Display help\n    version  Display version\n  \n  Options:\n    -a, --arr <list>    collect (defaults to [])\n    -c, --count <list>  counts (defaults to [])\n    -f, --flag          undefined\n    -h, --help          Output usage information\n    -s, --str           undefined\n    -v, --version       Output the version number\n  \n"
   }
 }

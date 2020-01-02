@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "list": [
+      "minimist"
+    ],
+    "outdated": [],
+    "size": 7724
+  }
+}

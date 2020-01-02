@@ -1,18 +1,12 @@
 {
   "": {
-    "duration": 70,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [],
       "options": {}
     }
   },
   "--flag": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [],
       "options": {
         "flag": true
@@ -20,10 +14,7 @@
     }
   },
   "--count": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [],
       "options": {
         "count": 1
@@ -31,10 +22,7 @@
     }
   },
   "--count --count": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [],
       "options": {
         "count": 2
@@ -42,10 +30,7 @@
     }
   },
   "--str xyz": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [
         "xyz"
       ],
@@ -55,10 +40,7 @@
     }
   },
   "--str=xyz": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [],
       "options": {
         "str": "xyz"
@@ -66,10 +48,7 @@
     }
   },
   "--arr abc": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [
         "abc"
       ],
@@ -81,10 +60,7 @@
     }
   },
   "--arr=abc": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [],
       "options": {
         "arr": [
@@ -94,10 +70,7 @@
     }
   },
   "--arr=abc --arr def": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [
         "def"
       ],
@@ -110,10 +83,7 @@
     }
   },
   "--arr=abc --arr=def": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [],
       "options": {
         "arr": [
@@ -124,10 +94,7 @@
     }
   },
   "first": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [
         "first"
       ],
@@ -135,10 +102,7 @@
     }
   },
   "first second": {
-    "duration": 60,
-    "exitCode": 255,
-    "stderr": "",
-    "data": {
+    "value": {
       "targets": [
         "first",
         "second"
@@ -147,17 +111,11 @@
     }
   },
   "--help": {
-    "duration": 60,
-    "data": {
-      "error": "Unexpected token U in JSON at position 1",
-      "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
-    }
+    "error": "Unexpected token U in JSON at position 0",
+    "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "duration": 60,
-    "data": {
-      "error": "Unexpected token U in JSON at position 1",
-      "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
-    }
+    "error": "Unexpected token U in JSON at position 0",
+    "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
   }
 }

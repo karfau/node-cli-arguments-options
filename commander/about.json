@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "list": [
+      "commander"
+    ],
+    "outdated": [],
+    "size": 26803
+  }
+}

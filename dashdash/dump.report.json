@@ -1,18 +1,16 @@
 {
   "": {
-    "duration": 90,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "_order": [],
       "_args": []
     }
   },
   "--flag": {
-    "duration": 90,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "flag": true,
       "_order": [
         {
@@ -25,10 +23,9 @@
     }
   },
   "--count": {
-    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "count": 1,
       "_order": [
         {
@@ -41,10 +38,9 @@
     }
   },
   "--count --count": {
-    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "count": 2,
       "_order": [
         {
@@ -62,10 +58,9 @@
     }
   },
   "--str xyz": {
-    "duration": 100,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "str": "xyz",
       "_order": [
         {
@@ -78,10 +73,9 @@
     }
   },
   "--str=xyz": {
-    "duration": 90,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "str": "xyz",
       "_order": [
         {
@@ -94,10 +88,9 @@
     }
   },
   "--arr abc": {
-    "duration": 80,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "arr": [
         "abc"
       ],
@@ -112,10 +105,9 @@
     }
   },
   "--arr=abc": {
-    "duration": 140,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "arr": [
         "abc"
       ],
@@ -130,10 +122,9 @@
     }
   },
   "--arr=abc --arr def": {
-    "duration": 90,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "arr": [
         "abc",
         "def"
@@ -154,10 +145,9 @@
     }
   },
   "--arr=abc --arr=def": {
-    "duration": 90,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "arr": [
         "abc",
         "def"
@@ -178,10 +168,9 @@
     }
   },
   "first": {
-    "duration": 150,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "_order": [],
       "_args": [
         "first"
@@ -189,10 +178,9 @@
     }
   },
   "first second": {
-    "duration": 100,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "_order": [],
       "_args": [
         "first",
@@ -201,10 +189,9 @@
     }
   },
   "--help": {
-    "duration": 100,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "help": true,
       "_order": [
         {
@@ -217,10 +204,9 @@
     }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "duration": 100,
     "exitCode": 255,
     "stderr": "",
-    "data": {
+    "value": {
       "flag": true,
       "count": 2,
       "str": "xyz",

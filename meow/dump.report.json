@@ -1,14 +1,12 @@
 {
   "": {
-    "duration": 130,
-    "data": {
+    "value": {
       "input": [],
       "flags": {}
     }
   },
   "--flag": {
-    "duration": 120,
-    "data": {
+    "value": {
       "input": [],
       "flags": {
         "flag": true
@@ -16,8 +14,7 @@
     }
   },
   "--count": {
-    "duration": 130,
-    "data": {
+    "value": {
       "input": [],
       "flags": {
         "count": 1
@@ -25,8 +22,7 @@
     }
   },
   "--count --count": {
-    "duration": 140,
-    "data": {
+    "value": {
       "input": [],
       "flags": {
         "count": 2
@@ -34,8 +30,7 @@
     }
   },
   "--str xyz": {
-    "duration": 120,
-    "data": {
+    "value": {
       "input": [],
       "flags": {
         "str": "xyz"
@@ -43,8 +38,7 @@
     }
   },
   "--str=xyz": {
-    "duration": 140,
-    "data": {
+    "value": {
       "input": [],
       "flags": {
         "str": "xyz"
@@ -52,8 +46,7 @@
     }
   },
   "--arr abc": {
-    "duration": 120,
-    "data": {
+    "value": {
       "input": [],
       "flags": {
         "arr": "abc"
@@ -61,8 +54,7 @@
     }
   },
   "--arr=abc": {
-    "duration": 150,
-    "data": {
+    "value": {
       "input": [],
       "flags": {
         "arr": "abc"
@@ -70,8 +62,7 @@
     }
   },
   "--arr=abc --arr def": {
-    "duration": 120,
-    "data": {
+    "value": {
       "input": [],
       "flags": {
         "arr": [
@@ -82,8 +73,7 @@
     }
   },
   "--arr=abc --arr=def": {
-    "duration": 130,
-    "data": {
+    "value": {
       "input": [],
       "flags": {
         "arr": [
@@ -94,8 +84,7 @@
     }
   },
   "first": {
-    "duration": 120,
-    "data": {
+    "value": {
       "input": [
         "first"
       ],
@@ -103,8 +92,7 @@
     }
   },
   "first second": {
-    "duration": 160,
-    "data": {
+    "value": {
       "input": [
         "first",
         "second"
@@ -113,15 +101,11 @@
     }
   },
   "--help": {
-    "duration": 130,
-    "data": {
-      "error": "Unexpected end of JSON input",
-      "stdout": "\n\n"
-    }
+    "error": "Unexpected end of JSON input",
+    "stdout": "\n\n"
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "duration": 140,
-    "data": {
+    "value": {
       "input": [
         "first",
         "second"

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "list": [
+      "assert-plus",
+      "dashdash"
+    ],
+    "outdated": [],
+    "size": 27487
+  }
+}

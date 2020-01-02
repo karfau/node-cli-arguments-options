@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "list": [
+      "ansi-styles",
+      "args",
+      "camelcase",
+      "chalk",
+      "color-convert",
+      "color-name",
+      "escape-string-regexp",
+      "has-flag",
+      "leven",
+      "mri",
+      "supports-color"
+    ],
+    "outdated": [],
+    "size": 55128
+  }
+}

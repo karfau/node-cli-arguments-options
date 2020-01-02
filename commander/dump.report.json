@@ -1,14 +1,12 @@
 {
   "": {
-    "duration": 80,
-    "data": {
+    "value": {
       "opts": {},
       "args": []
     }
   },
   "--flag": {
-    "duration": 70,
-    "data": {
+    "value": {
       "opts": {
         "flag": true
       },
@@ -16,8 +14,7 @@
     }
   },
   "--count": {
-    "duration": 80,
-    "data": {
+    "value": {
       "opts": {
         "count": 1
       },
@@ -25,8 +22,7 @@
     }
   },
   "--count --count": {
-    "duration": 70,
-    "data": {
+    "value": {
       "opts": {
         "count": 2
       },
@@ -34,8 +30,7 @@
     }
   },
   "--str xyz": {
-    "duration": 70,
-    "data": {
+    "value": {
       "opts": {
         "str": "xyz"
       },
@@ -43,8 +38,7 @@
     }
   },
   "--str=xyz": {
-    "duration": 60,
-    "data": {
+    "value": {
       "opts": {
         "str": "xyz"
       },
@@ -52,8 +46,7 @@
     }
   },
   "--arr abc": {
-    "duration": 60,
-    "data": {
+    "value": {
       "opts": {
         "arr": [
           "abc"
@@ -63,8 +56,7 @@
     }
   },
   "--arr=abc": {
-    "duration": 70,
-    "data": {
+    "value": {
       "opts": {
         "arr": [
           "abc"
@@ -74,8 +66,7 @@
     }
   },
   "--arr=abc --arr def": {
-    "duration": 70,
-    "data": {
+    "value": {
       "opts": {
         "arr": [
           "abc",
@@ -86,8 +77,7 @@
     }
   },
   "--arr=abc --arr=def": {
-    "duration": 70,
-    "data": {
+    "value": {
       "opts": {
         "arr": [
           "abc",
@@ -98,8 +88,7 @@
     }
   },
   "first": {
-    "duration": 80,
-    "data": {
+    "value": {
       "opts": {},
       "args": [
         "first"
@@ -107,8 +96,7 @@
     }
   },
   "first second": {
-    "duration": 70,
-    "data": {
+    "value": {
       "opts": {},
       "args": [
         "first",
@@ -117,15 +105,11 @@
     }
   },
   "--help": {
-    "duration": 70,
-    "data": {
-      "error": "Unexpected token U in JSON at position 0",
-      "stdout": "Usage: dump [options] [first] [second]\n\nOptions:\n  --flag       \n  --count      counts\n  --str <val>  \n  --arr <val>  collects\n  -h, --help   output usage information\n"
-    }
+    "error": "Unexpected token U in JSON at position 0",
+    "stdout": "Usage: dump [options] [first] [second]\n\nOptions:\n  --flag       \n  --count      counts\n  --str <val>  \n  --arr <val>  collects\n  -h, --help   output usage information\n"
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "duration": 70,
-    "data": {
+    "value": {
       "opts": {
         "flag": true,
         "count": 2,

@@ -1,48 +1,41 @@
 {
   "": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": []
     }
   },
   "--flag": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--flag": true
     }
   },
   "--count": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--count": 1
     }
   },
   "--count --count": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--count": 2
     }
   },
   "--str xyz": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--str": "xyz"
     }
   },
   "--str=xyz": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--str": "xyz"
     }
   },
   "--arr abc": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--arr": [
         "abc"
@@ -50,8 +43,7 @@
     }
   },
   "--arr=abc": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--arr": [
         "abc"
@@ -59,8 +51,7 @@
     }
   },
   "--arr=abc --arr def": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--arr": [
         "abc",
@@ -69,8 +60,7 @@
     }
   },
   "--arr=abc --arr=def": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--arr": [
         "abc",
@@ -79,16 +69,14 @@
     }
   },
   "first": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [
         "first"
       ]
     }
   },
   "first second": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [
         "first",
         "second"
@@ -96,15 +84,13 @@
     }
   },
   "--help": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [],
       "--help": true
     }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "duration": 60,
-    "data": {
+    "value": {
       "_": [
         "first",
         "second"

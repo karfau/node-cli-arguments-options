@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "list": [
+      "@types/color-name",
+      "ansi-regex",
+      "ansi-styles",
+      "camelcase",
+      "cliui",
+      "color-convert",
+      "color-name",
+      "decamelize",
+      "emoji-regex",
+      "find-up",
+      "get-caller-file",
+      "is-fullwidth-code-point",
+      "locate-path",
+      "p-limit",
+      "p-locate",
+      "p-try",
+      "path-exists",
+      "require-directory",
+      "require-main-filename",
+      "set-blocking",
+      "string-width",
+      "strip-ansi",
+      "which-module",
+      "wrap-ansi",
+      "y18n",
+      "yargs",
+      "yargs-parser"
+    ],
+    "outdated": [],
+    "size": 168471
+  }
+}
