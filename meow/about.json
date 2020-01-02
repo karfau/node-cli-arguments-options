@@ -56,7 +56,6 @@
       "validate-npm-package-license",
       "yargs-parser"
     ],
-    "dependents": {},
     "outdated": [],
     "size": 273043,
     "usedIn": []
