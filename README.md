@@ -8,11 +8,18 @@ To goal is something like a mono repo, where the same checks are implemented in 
 
 ## What data to collect
 
-- number of dependencies (up-to-date?) / dependents
-- Features
-  - code size (to support the feature)
-  - execution time
-- availability of type definitions (quality/completeness ?)
+**Dependencies:**
+- list of dependencies
+  - outdated ones
+  - size of all packages to download
+- usage inside the packages in this repo
+
+**Features:** (not sure about the format yet)
+- code size (to support the feature)
+- execution time (TBD, persisting them is causing to many changes)
+
+**Ideas**  
+- TBD availability of type definitions (quality/completeness ?)
 - TBD (existing?) score for maintenance/community
 
 ## Contribute
