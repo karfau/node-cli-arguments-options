@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "deps": [
+      "camelcase",
+      "decamelize",
+      "yargs-parser"
+    ],
+    "outdated": [],
+    "size": 22132,
+    "usedIn": [
+      "meow",
+      "yargs"
+    ]
+  }
+}
