@@ -6,7 +6,7 @@
     "about": "runex about.js",
     "add": "runex add.js",
     "dump": "runex dump.js",
-    "postinstall": "runex install.js",
+    "postinstall": "runex install.js"
   },
   "keywords": [],
   "author": "",
