@@ -1,166 +1,182 @@
 {
   "": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [],
-      "arr": []
+      "parsed": {
+        "a": [],
+        "arr": []
+      },
+      "sub": []
     }
   },
   "--flag": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [],
-      "arr": [],
-      "f": true,
-      "flag": true
+      "parsed": {
+        "a": [],
+        "arr": [],
+        "f": true,
+        "flag": true
+      },
+      "sub": []
     }
   },
   "--count": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [
-        true
-      ],
-      "count": [
-        true
-      ],
-      "a": [],
-      "arr": []
+      "parsed": {
+        "a": [],
+        "arr": [],
+        "c": 1,
+        "count": 1
+      },
+      "sub": []
     }
   },
   "--count --count": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [
-        true,
-        true
-      ],
-      "count": [
-        true,
-        true
-      ],
-      "a": [],
-      "arr": []
+      "parsed": {
+        "a": [],
+        "arr": [],
+        "c": 2,
+        "count": 2
+      },
+      "sub": []
     }
   },
   "--str xyz": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [],
-      "arr": [],
-      "s": "xyz",
-      "str": "xyz"
+      "parsed": {
+        "a": [],
+        "arr": [],
+        "s": "xyz",
+        "str": "xyz"
+      },
+      "sub": []
     }
   },
   "--str=xyz": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [],
-      "arr": [],
-      "s": "xyz",
-      "str": "xyz"
+      "parsed": {
+        "a": [],
+        "arr": [],
+        "s": "xyz",
+        "str": "xyz"
+      },
+      "sub": []
     }
   },
   "--arr abc": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [
-        "abc"
-      ],
-      "arr": [
-        "abc"
-      ]
+      "parsed": {
+        "a": [
+          "abc"
+        ],
+        "arr": [
+          "abc"
+        ]
+      },
+      "sub": []
     }
   },
   "--arr=abc": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [
-        "abc"
-      ],
-      "arr": [
-        "abc"
-      ]
+      "parsed": {
+        "a": [
+          "abc"
+        ],
+        "arr": [
+          "abc"
+        ]
+      },
+      "sub": []
     }
   },
   "--arr=abc --arr def": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [
-        "abc",
-        "def"
-      ],
-      "arr": [
-        "abc",
-        "def"
-      ]
+      "parsed": {
+        "a": [
+          "abc",
+          "def"
+        ],
+        "arr": [
+          "abc",
+          "def"
+        ]
+      },
+      "sub": []
     }
   },
   "--arr=abc --arr=def": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [
-        "abc",
-        "def"
-      ],
-      "arr": [
-        "abc",
-        "def"
-      ]
+      "parsed": {
+        "a": [
+          "abc",
+          "def"
+        ],
+        "arr": [
+          "abc",
+          "def"
+        ]
+      },
+      "sub": []
     }
   },
   "first": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [],
-      "arr": []
+      "parsed": {
+        "a": [],
+        "arr": []
+      },
+      "sub": [
+        "first"
+      ]
     }
   },
   "first second": {
-    "exitCode": 255,
-    "stderr": "",
     "value": {
-      "c": [],
-      "count": [],
-      "a": [],
-      "arr": []
+      "parsed": {
+        "a": [],
+        "arr": []
+      },
+      "sub": [
+        "first",
+        "second"
+      ]
     }
   },
   "--help": {
-    "error": "Unexpected token U in JSON at position 0",
-    "stdout": "  Usage: dump.js [options] [command]\n  \n  Commands:\n    help     Display help\n    version  Display version\n  \n  Options:\n    -a, --arr <list>    collect (defaults to [])\n    -c, --count <list>  counts (defaults to [])\n    -f, --flag          undefined\n    -h, --help          Output usage information\n    -s, --str           undefined\n    -v, --version       Output the version number\n  \n"
+    "value": {
+      "parsed": {
+        "a": [],
+        "arr": [],
+        "h": true,
+        "help": true
+      },
+      "sub": []
+    }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
-    "error": "Unexpected token U in JSON at position 0",
-    "stdout": "  Usage: dump.js [options] [command]\n  \n  Commands:\n    help     Display help\n    version  Display version\n  \n  Options:\n    -a, --arr <list>    collect (defaults to [])\n    -c, --count <list>  counts (defaults to [])\n    -f, --flag          undefined\n    -h, --help          Output usage information\n    -s, --str           undefined\n    -v, --version       Output the version number\n  \n"
+    "value": {
+      "parsed": {
+        "a": [
+          "abc",
+          "def"
+        ],
+        "arr": [
+          "abc",
+          "def"
+        ],
+        "f": true,
+        "flag": true,
+        "c": 2,
+        "count": 2,
+        "s": "xyz",
+        "str": "xyz",
+        "h": true,
+        "help": true
+      },
+      "sub": [
+        "first",
+        "second"
+      ]
+    }
   }
 }
