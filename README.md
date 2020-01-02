@@ -24,10 +24,12 @@ To goal is something like a mono repo, where the same checks are implemented in 
 
 ## Contribute
 
+Run `npm i` to get started with code changes, it also set's up all the sub folders.
+
 Support is very welcome, please file PRs and issues for
 
-- a lib to add for comparison (run `npx runex add.js <pkg-name>` for a starting point)
-- a metric to add
-- an idea where to gether data from
+- a lib to add for comparison (run `npm run add <pkg-name>` for a starting point)
+- a metric to add (see `about.js` that writes to `pkg/about.json` as an example)
+- an idea where to gather data from ([file an issue](https://github.com/karfau/runex/issues/new))
 - data visualisation
 - ...?

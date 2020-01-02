@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "yargs": "^15.0.2"
+    "yargs": "15.0.2"
   }
 }
