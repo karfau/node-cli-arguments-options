@@ -7,8 +7,12 @@
       "lodash.camelcase",
       "typical"
     ],
-    "outdated": [],
-    "size": 44706,
+    "outdated": [
+      "array-back@3.1.0...4.0.1",
+      "find-replace@3.0.0...4.0.0",
+      "typical@4.0.0...6.0.0"
+    ],
+    "size": 44327,
     "usedIn": []
   }
 }

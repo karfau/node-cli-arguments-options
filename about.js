@@ -15,23 +15,25 @@ function npmPackageInfo(p) {
   return eval(`(${execJson(`npm info ${p} .`).stdout.trim()})`)
 }
 
+const TODAY = new Date().toISOString().substr(0, 10)
+
 async function depInfo (pkg) {
   const usedIn = packagesIn('.') // TODO check inside prominent cli tools?
     .filter(name => name !== pkg && existsSync(path.join('.', name, NODE_MODULES, pkg)))
   const deps = packagesIn('.', pkg, NODE_MODULES)
 
-  const versions = (await readJson(path.join('.', pkg, 'package-lock.json'))).dependencies
+  const locked = (await readJson(path.join('.', pkg, 'package-lock.json'))).dependencies
   const outdated = []
   let size = 0
   for (const dep of deps) {
-    const {dist, name, version, ...info} = await cached(
-      __filename, npmPackageInfo, dep, versions[dep].version
+    const {version, resolved} = locked[dep]
+    const {version: latest} = await cached(
+      __filename, npmPackageInfo, dep, TODAY
     )
-    const latest = info['dist-tags'] && info['dist-tags'].latest
     if (version !== latest) {
-      outdated.push(`${name}@${version}...${latest}`)
+      outdated.push(`${dep}@${version}...${latest}`)
     }
-    size += await cached(__filename, headContentLength, dist.tarball)
+    size += await cached(__filename, headContentLength, resolved)
   }
   return {deps, outdated, size, usedIn}
 }

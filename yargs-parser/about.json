@@ -5,8 +5,10 @@
       "decamelize",
       "yargs-parser"
     ],
-    "outdated": [],
-    "size": 22132,
+    "outdated": [
+      "decamelize@1.2.0...3.2.0"
+    ],
+    "size": 21753,
     "usedIn": [
       "meow",
       "yargs"
