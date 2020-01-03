@@ -30,7 +30,7 @@ async function cached(mainKey, resolve, ...keys) {
   }
   const value = await resolve.apply(null, keys)
   cache[cacheKey] = value
-  const dontWait = writeJson(file, cache).catch(console.error)
+  await writeJson(file, cache).catch(console.error)
   return value;
 }
 
