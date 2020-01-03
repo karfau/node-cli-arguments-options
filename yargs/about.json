@@ -30,12 +30,9 @@
       "yargs-parser"
     ],
     "outdated": [
-      "ansi-styles@4.2.0...4.2.1",
-      "decamelize@1.2.0...3.2.0",
-      "p-limit@2.2.1...2.2.2",
-      "yargs@15.0.2...15.1.0"
+      "decamelize@1.2.0...3.2.0"
     ],
-    "size": 166676,
+    "size": 168092,
     "usedIn": []
   }
 }
