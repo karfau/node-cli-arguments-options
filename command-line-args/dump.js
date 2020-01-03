@@ -2,6 +2,7 @@ const commandLineArgs = require('command-line-args');
 
 const {arguments = [], ...options} = commandLineArgs([
   {name: 'flag', type: Boolean},
+  // https://github.com/75lb/command-line-args/issues/97
   {name: 'arguments', type: String, multiple: true, defaultOption: true},
   {name: 'count', type: Boolean, multiple: true},
   {name: 'str', type: String},
