@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "deps": [
+      "array-back",
+      "command-line-args",
+      "find-replace",
+      "lodash.camelcase",
+      "typical"
+    ],
+    "outdated": [],
+    "size": 44706,
+    "usedIn": []
+  }
+}

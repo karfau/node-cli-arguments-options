@@ -22,6 +22,10 @@ function runPkg (pkg) {
         if (!hasOptions || !hasArguments) {
           data.raw = raw;
         }
+        if (raw.exitCode) {
+          data.stderr = raw.stderr
+          data.exitCode = raw.exitCode
+        }
         acc[cur] = data
         return acc
       },

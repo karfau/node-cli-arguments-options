@@ -1,0 +1,104 @@
+{
+  "": {
+    "arguments": [],
+    "options": {}
+  },
+  "--flag": {
+    "arguments": [],
+    "options": {
+      "flag": true
+    }
+  },
+  "--count": {
+    "arguments": [],
+    "options": {
+      "count": 1
+    }
+  },
+  "--count --count": {
+    "arguments": [],
+    "options": {
+      "count": 2
+    }
+  },
+  "--str xyz": {
+    "arguments": [],
+    "options": {
+      "str": "xyz"
+    }
+  },
+  "--str=xyz": {
+    "arguments": [],
+    "options": {
+      "str": "xyz"
+    }
+  },
+  "--arr abc": {
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc"
+      ]
+    }
+  },
+  "--arr=abc": {
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc"
+      ]
+    }
+  },
+  "--arr=abc --arr def": {
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc",
+        "def"
+      ]
+    }
+  },
+  "--arr=abc --arr=def": {
+    "arguments": [],
+    "options": {
+      "arr": [
+        "abc",
+        "def"
+      ]
+    }
+  },
+  "first": {
+    "arguments": [
+      "first"
+    ],
+    "options": {}
+  },
+  "first second": {
+    "arguments": [
+      "first",
+      "second"
+    ],
+    "options": {}
+  },
+  "--help": {
+    "arguments": [],
+    "options": {
+      "help": true
+    }
+  },
+  "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
+    "arguments": [],
+    "options": {
+      "flag": true,
+      "count": 2,
+      "str": "xyz",
+      "arr": [
+        "abc",
+        "def",
+        "first",
+        "second"
+      ],
+      "help": true
+    }
+  }
+}
