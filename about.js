@@ -1,10 +1,9 @@
-const {writeJsonSync} = require('fs-extra')
+const axios = require('axios')
+const {existsSync, readJson, writeJsonSync} = require('fs-extra')
 const path = require('path')
+const {cached} = require('./cache')
 const {execJson} = require('./execJSON')
 const {forEach, packagesIn} = require('./iterate')
-const axios = require('axios')
-const {cached} = require('./cache')
-const {pathExistsSync} = require('fs-extra')
 
 async function headContentLength (url) {
   return parseInt((await axios.head(url)).headers['content-length'])
@@ -18,13 +17,16 @@ function npmPackageInfo(p) {
 
 async function depInfo (pkg) {
   const usedIn = packagesIn('.') // TODO check inside prominent cli tools?
-    .filter(name => name !== pkg && pathExistsSync(path.join('.', name, NODE_MODULES, pkg)))
+    .filter(name => name !== pkg && existsSync(path.join('.', name, NODE_MODULES, pkg)))
   const deps = packagesIn('.', pkg, NODE_MODULES)
+
+  const versions = (await readJson(path.join('.', pkg, 'package-lock.json'))).dependencies
   const outdated = []
   let size = 0
   for (const dep of deps) {
-    // TODO add version to cache key?
-    const {dist, name, version, ...info} = await cached(__filename, npmPackageInfo, dep)
+    const {dist, name, version, ...info} = await cached(
+      __filename, npmPackageInfo, dep, versions[dep].version
+    )
     const latest = info['dist-tags'] && info['dist-tags'].latest
     if (version !== latest) {
       outdated.push(`${name}@${version}...${latest}`)
