@@ -21,7 +21,7 @@ async function forEach (method, args) {
     args = packagesIn('.')
   }
   for (const arg of args) {
-    args.length > 1 && console.error(arg)
+    args.length > 1 && console.error('\n', method.name, arg)
     await method(arg)
   }
 }

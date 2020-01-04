@@ -5,6 +5,9 @@
     ],
     "outdated": [],
     "size": 5253,
-    "usedIn": []
+    "usedIn": [
+      "tap@14.10.5 > ts-node@8.5.4 > arg@4.1.2",
+      "ts-node@8.5.4 > arg@4.1.2"
+    ]
   }
 }

@@ -11,7 +11,14 @@
     "size": 21753,
     "usedIn": [
       "meow",
-      "yargs"
+      "yargs",
+      "ava@2.4.0 > meow@5.0.0 > yargs-parser@10.1.0",
+      "jest@24.9.0 > jest-cli@24.9.0 > yargs@13.3.0 > yargs-parser@13.1.1",
+      "mocha@6.2.2 > yargs-parser@13.1.1",
+      "npm@6.13.4 > libnpx@10.2.0 > yargs@11.1.1 > yargs-parser@9.0.2",
+      "npx@10.2.0 > libnpx@10.2.0 > yargs@11.1.1 > yargs-parser@9.0.2",
+      "nyc@15.0.0 > yargs@15.1.0 > yargs-parser@16.1.0",
+      "tap@14.10.5 > nyc@14.1.1 > yargs-parser@13.1.1"
     ]
   }
 }

@@ -1,37 +1,83 @@
-const { mkdir, pathExists, readJson, writeJson } = require('fs-extra')
+const {existsSync, mkdirSync, readJson, writeJson} = require('fs-extra')
 const path = require('path')
+const {forEach} = require('./iterate')
 
 const CACHE_DIR = path.join(__dirname, '.cache')
+const MEM = {}
+async function getCache(file) {
+  if (MEM[file]) return MEM[file]
+  let cache = {}
+  try {
+    cache = await readJson(file)
+  } catch {}
+  MEM[file] = cache
+  return cache
+}
+
+const toFlush = {}
+
+function flushLater (file) {
+  if (toFlush[file]) clearTimeout(toFlush[file])
+  toFlush[file] = setTimeout(flush, 500, file)
+}
+
+async function flush (file) {
+  await writeJson(file, MEM[file]).catch(console.error)
+}
+
+async function flushAll () {
+  return forEach(flush, Object.keys(MEM)).catch(console.error)
+}
+
+/**
+ * @param {Function} fun
+ */
+function hashFunction (fun) {
+  return fun.name || fun.toString().replace(/\s+/g, '_')
+}
+
+function asFileName (main, ...keys) {
+  if (path.isAbsolute(main)) main = path.relative(CACHE_DIR, main)
+  return [main, ...keys].join('.').replace(/[/\\\s]+/g, '--')
+}
 
 /**
  * Stores the values returned by `resolve` inside `./.cache` as JSON files.
  *
- * @param {string} mainKey the first part of the cache file name
+ * @param {any[]} keys the first part of the cache file name
  * @param {Function} resolve The method to invoke (with `keys`) to get the data.
  *        Will not be invoked if the data is in the cache.
  *        It's name (or the code for anonymous functions) is also part of the cache file name.
- * @param {any} keys The keys are joined to form the key inside the cache file. They are also passed to `resolve`
+ * @param {any} args the values to pass to `resolver`, the form the first part of the key
+ *        arguments with `typeof === 'object'` will be ignored
  * @returns {Promise<ReturnType<resolve>>}
  */
-async function cached(mainKey, resolve, ...keys) {
-  if (!await pathExists(CACHE_DIR)) {
-    await mkdir(CACHE_DIR)
-  }
-  const hash = [mainKey, resolve.name || resolve].join('.').replace(/\/|\s+/g, '--') + '.json'
+function cached (keys, resolve) {
+  if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR)
+  const hash = asFileName(...keys, hashFunction(resolve)) + '.json'
   const file = path.join(CACHE_DIR, hash)
-  let cache = {};
-  try {
-    cache = await readJson(file)
-  } catch {}
+  return async (...args) => {
+    let cache = await getCache(file)
 
-  const cacheKey = keys.join(':')
-  if (cacheKey in cache) {
-    return cache[cacheKey]
+    const cacheKey = args
+      .map(it => {
+        switch (typeof it) {
+          case 'object':
+            return 'object'
+          case 'function':
+            return hashFunction(it)
+          default:
+            return it.toString()
+        }
+      }).join(':')
+    if (cacheKey in cache) {
+      return cache[cacheKey]
+    }
+    const value = await resolve(...args)
+    cache[cacheKey] = value
+    flushLater(file)
+    return value
   }
-  const value = await resolve.apply(null, keys)
-  cache[cacheKey] = value
-  await writeJson(file, cache).catch(console.error)
-  return value;
 }
 
-module.exports = {cached}
+module.exports = {cached, flushAll}

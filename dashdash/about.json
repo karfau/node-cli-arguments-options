@@ -6,6 +6,12 @@
     ],
     "outdated": [],
     "size": 27487,
-    "usedIn": []
+    "usedIn": [
+      "jest@24.9.0 > jest-cli@24.9.0 > jest-config@24.9.0 > jest-environment-jsdom@24.9.0 > jsdom@11.12.0 > request@2.88.0 > http-signature@1.2.0 > sshpk@1.16.1 > dashdash@1.14.1",
+      "npm@6.13.4 > request@2.88.0 > http-signature@1.2.0 > sshpk@1.16.1 > dashdash@1.14.1",
+      "npx@10.2.0 > npm@5.1.0 > request@2.81.0 > http-signature@1.1.1 > sshpk@1.16.1 > dashdash@1.14.1",
+      "tap@14.10.5 > coveralls@3.0.9 > request@2.88.0 > http-signature@1.2.0 > sshpk@1.16.1 > dashdash@1.14.1",
+      "webpack@4.41.5 > @webassemblyjs/ast@1.8.5 > @webassemblyjs/helper-wasm-bytecode@1.8.5 > synp@1.4.0 > request@2.88.0 > http-signature@1.2.0 > sshpk@1.16.1 > dashdash@1.14.1"
+    ]
   }
 }

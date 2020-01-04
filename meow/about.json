@@ -74,6 +74,8 @@
       "supports-color@5.5.0...7.1.0"
     ],
     "size": 251528,
-    "usedIn": []
+    "usedIn": [
+      "ava@2.4.0 > meow@5.0.0"
+    ]
   }
 }

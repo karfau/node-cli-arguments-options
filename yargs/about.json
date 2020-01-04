@@ -33,6 +33,13 @@
       "decamelize@1.2.0...3.2.0"
     ],
     "size": 168092,
-    "usedIn": []
+    "usedIn": [
+      "jest@24.9.0 > jest-cli@24.9.0 > yargs@13.3.0",
+      "mocha@6.2.2 > yargs@13.3.0",
+      "npm@6.13.4 > libnpx@10.2.0 > yargs@11.1.1",
+      "npx@10.2.0 > libnpx@10.2.0 > yargs@11.1.1",
+      "nyc@15.0.0 > yargs@15.1.0",
+      "tap@14.10.5 > nyc@14.1.1 > yargs@13.3.0"
+    ]
   }
 }
