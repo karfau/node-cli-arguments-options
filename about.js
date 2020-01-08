@@ -3,11 +3,10 @@ const {existsSync, readJson, writeJsonSync} = require('fs-extra')
 const {manifest} = require('pacote')
 const path = require('path')
 const dotenv = require('dotenv')
-const {cached, flushAll} = require('./cache')
+const {cached, flushAll, TODAY} = require('./cache')
 const {forEach, packagesIn} = require('./iterate')
 
 const NODE_MODULES = 'node_modules'
-const TODAY = new Date().toISOString().substr(0, 10)
 const TOOLS = [
   'ava', 'eslint', 'express', 'jest', 'mocha', 'npm', 'npx', 'nyc',
   'prettier', 'tap', 'ts-node', 'typescript', 'webpack'

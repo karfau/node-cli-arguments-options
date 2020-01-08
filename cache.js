@@ -3,6 +3,7 @@ const path = require('path')
 const {forEach} = require('./iterate')
 
 const CACHE_DIR = path.join(__dirname, '.cache')
+const TODAY = new Date().toISOString().substr(0, 10)
 const MEM = {}
 async function getCache(file) {
   if (MEM[file]) return MEM[file]
@@ -82,4 +83,4 @@ function cached (keys, resolve) {
   return fun;
 }
 
-module.exports = {cached, flushAll}
+module.exports = {cached, flushAll, TODAY}
