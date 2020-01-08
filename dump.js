@@ -6,7 +6,7 @@ const {execJson} = require('./execJSON')
 
 function collectDumps (pkg) {
   writeJsonSync(
-    path.join(pkg, 'dump.report.json'),
+    path.join(pkg, 'dump.json'),
     dumps.reduce(
       (acc, cur) => {
         const raw = execJson(`node ./${pkg}/dump.js ${cur}`)
