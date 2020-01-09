@@ -7,7 +7,9 @@ function runPkg (pkg) {
 
 async function run (...args) {
   await forEach(runPkg, args)
-  execSync('runex about', {stdio: 'inherit'})
+  if (!process.env.CI) {
+    execSync('runex about', {stdio: 'inherit'})
+  }
 }
 
 module.exports = {
