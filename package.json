@@ -6,6 +6,7 @@
     "about": "runex about.js",
     "add": "runex add.js",
     "dump": "runex dump.js",
+    "features": "runex features.js",
     "postinstall": "runex install.js"
   },
   "keywords": [],
@@ -14,10 +15,12 @@
   "devDependencies": {
     "@types/fs-extra": "8.0.1",
     "@types/node": "13.1.5",
+    "ajv": "6.10.2",
     "axios": "0.19.1",
     "camelcase": "5.3.1",
     "dotenv": "8.2.0",
     "fs-extra": "8.1.0",
+    "lodash": "4.17.15",
     "pacote": "10.3.0",
     "runex": "0.3.1"
   }
