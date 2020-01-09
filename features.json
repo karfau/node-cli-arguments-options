@@ -1,0 +1,233 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/karfau/node-cli-arguments-options/raw/master/features.json",
+  "title": "node-cli-arguments-options:features",
+  "definitions": {
+    "references": {
+      "description": "Links to relevant information for this feature",
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "format": "uri"
+        }
+      ],
+      "minLength": 1,
+      "uniqueItems": true
+    },
+    "tests": {
+      "description": "an executable test that proves the availability, the keys are the commands to execute, the values the expected output",
+      "oneOf": [
+        {
+          "description": "the expected output from the command/eval (see ./execJson.js)",
+          "properties": {
+            "stdout": {
+              "description": "a string or regex that is contained in stderr",
+              "type": "string"
+            },
+            "value": {
+              "description": "expect stdout to be JSON and match it against this object",
+              "type": "object",
+              "properties": {
+                "arguments": {
+                  "type": "array"
+                },
+                "options": {
+                  "type": "object"
+                }
+              }
+            },
+            "stderr": {
+              "description": "a string or regex that is contained in stderr",
+              "type": "string"
+            },
+            "exitCode": {
+              "description": "expecting the process to exit with that code",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 255
+            }
+          }
+        },
+        {
+          "description": "a string or regex that is contained in stdout",
+          "type": "string"
+        }
+      ]
+    },
+    "feature": {
+      "$id": "#feature",
+      "properties": {
+        "$comment": {
+          "description": "feature description added by cliao script npm run features",
+          "type": "string",
+          "pattern": "^[A-Z].*[?]$"
+        },
+        "mandatory": {
+          "description": "true: the feature is always enabled and can not be disabled",
+          "type": "boolean",
+          "default": true
+        },
+        "unsupported": {
+          "description": "the feature is not available, or only by post processing",
+          "type": "boolean",
+          "default": true
+        },
+        "default": {
+          "description": "the feature is active implicitly without setting it in the configuration",
+          "$ref": "#/definitions/tests"
+        },
+        "configurable": {
+          "description": "the parser offers an option for this feature",
+          "$ref": "#/definitions/tests"
+        },
+        "code": {
+          "description": "the feature needs custom code",
+          "$ref": "#/definitions/tests"
+        },
+        "references": {
+          "$ref": "#/definitions/references"
+        },
+        "comments": {
+          "description": "Additional comments about the feature",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 3
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "options": {
+      "description": "Options are arguments that start with at least one hyphen",
+      "properties": {
+        "unknown": {
+          "description": "Describes how options are treated that have not been configured but are present in argv",
+          "properties": {
+            "exit": {
+              "description": "Can parsing unknown options cause the process to exit?",
+              "$ref": "#feature"
+            },
+            "generic": {
+              "description": "Will unknown options be present in the parsed output?",
+              "$ref": "#feature"
+            },
+            "handler": {
+              "description": "Is it possible to configure a method that will be invoked for unknown options?",
+              "$ref": "#feature"
+            },
+            "throws": {
+              "description": "Can parsing unknown options cause the process to throw an Error?",
+              "$ref": "#feature"
+            }
+          }
+        },
+        "types": {
+          "description": "About the possible types for option values",
+          "properties": {
+            "flag": {
+              "description": "Can an option be passed without value to set it to true?",
+              "$ref": "#feature"
+            },
+            "boolean": {
+              "description": "Can an option be passed a boolean value to set it to true or false?",
+              "$ref": "#feature"
+            },
+            "negated": {
+              "description": "Can flags be passed with a prefix to set the value to false?",
+              "$ref": "#feature"
+            },
+            "default-string": {
+              "description": "Can a default string be configured when the option is passed as a flag?",
+              "$ref": "#feature"
+            },
+            "string": {
+              "description": "Can an option be passed any value that will be treated as a string?",
+              "$ref": "#feature"
+            },
+            "number": {
+              "description": "What are the options for converting values to JS number type?",
+              "$ref": "#feature"
+            },
+            "integer": {
+              "description": "What are the options for converting values to integer values?",
+              "$ref": "#feature"
+            },
+            "count": {
+              "description": "Is there an option to count the number of times an option(/flag) has been passed?",
+              "$ref": "#feature"
+            },
+            "custom": {
+              "description": "Is it possible to configure custom option types?",
+              "$ref": "#feature"
+            },
+            "lists": {
+              "description": "Types for options that can result in multiple values (see options.syntax.* for details on how to pass them)",
+              "properties": {
+                "array": {
+                  "description": "Is it possible to configure options to always be a list of values?",
+                  "$ref": "#feature"
+                },
+                "typed-items": {
+                  "description": "Can the type of the items be configured?",
+                  "$ref": "#feature"
+                }
+              }
+            }
+          }
+        },
+        "aliases": {
+          "description": "Aliases are the short form of options",
+          "properties": {
+            "alias": {
+              "description": "Can aliases be configured for options?",
+              "$ref": "#feature"
+            },
+            "abbreviations": {
+              "description": "Are all possible distinct shortcuts for configured options automatically detected?",
+              "$ref": "#feature"
+            },
+            "in-output": {
+              "description": "Are the aliases present as keys in the object returned?",
+              "$ref": "#feature"
+            }
+          }
+        },
+        "syntax": {
+          "description": "Allowed syntax for passing values for options",
+          "properties": {
+            "short-space-value": {
+              "description": "Is `-<single letter option> <value>` possible?",
+              "$ref": "#feature"
+            },
+            "long-space-value": {
+              "description": "Is `--<multiple letter option> <value>` possible?",
+              "$ref": "#feature"
+            },
+            "long-equal-value": {
+              "description": "Is `--<multiple letter option>=<value>` possible?",
+              "$ref": "#feature"
+            },
+            "csv-value": {
+              "description": "Is `--<multiple letter option>=<value>[,<value,...]` possible?",
+              "$ref": "#feature"
+            },
+            "repeated": {
+              "description": "Is it possible to pass an option multiple times to collect values?",
+              "$ref": "#feature"
+            },
+            "multiple": {
+              "description": "Is it possible to pass multiple values after a single option?",
+              "$ref": "#feature"
+            }
+          }
+        }
+      }
+    }
+  }
+}
