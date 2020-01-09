@@ -20,7 +20,7 @@ jobs:
     - name: npm install and test
       run: |
         npm ci
-        npm run dump
+        npm run test
       env:
         CI: true
     - name: ensure clean workspace
