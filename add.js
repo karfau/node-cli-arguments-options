@@ -17,6 +17,7 @@ console.log(JSON.stringify({arguments/*, options*/}))
 `);
   execSync(`runex about ${pkg}`)
   execSync(`runex dump ${pkg}`)
+  execSync(`runex features ${pkg}`)
   execSync(`git add ${pkg}`)
 }
 

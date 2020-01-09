@@ -1,0 +1,279 @@
+{
+  "$schema": "https://github.com/karfau/node-cli-arguments-options/raw/master/features.json",
+  "$comment": "Features available in package 'commander'.",
+  "options": {
+    "$comment": "Options are arguments that start with at least one hyphen",
+    "unknown": {
+      "$comment": "Describes how options are treated that have not been configured but are present in argv",
+      "exit": {
+        "$comment": "Can parsing unknown options cause the process to exit?",
+        "default": {
+          "node ./dump.js --unknown": {
+            "exitCode": 1,
+            "stderr": "error: unknown option"
+          }
+        },
+        "references": [
+          "https://github.com/tj/commander.js#override-exit-handling",
+          "https://github.com/karfau/runex/blob/0e9ae343cc73f90941edd43d38a6b3c98bb608b5/index.js#L120"
+        ]
+      },
+      "generic": {
+        "$comment": "Will unknown options be present in the parsed output?",
+        "unsupported": true,
+        "comments": [
+          "There is an undocumented option 'allowUnknownOptions', see referenced PR"
+        ],
+        "references": [
+          "https://github.com/tj/commander.js/pull/1138"
+        ]
+      },
+      "handler": {
+        "$comment": "Is it possible to configure a method that will be invoked for unknown options?",
+        "unsupported": true,
+        "comments": [
+          "There is an undocumented option 'allowUnknownOptions', see referenced PR.",
+          "With that option and custom event listeners it might be possible(?)"
+        ],
+        "references": [
+          "https://github.com/tj/commander.js/pull/1138",
+          "https://github.com/tj/commander.js#custom-event-listeners"
+        ]
+      },
+      "throws": {
+        "$comment": "Can parsing unknown options cause the process to throw an Error?",
+        "comments": [
+          "configurable, see references"
+        ],
+        "references": [
+          "https://github.com/tj/commander.js#override-exit-handling",
+          "https://github.com/karfau/runex/blob/0e9ae343cc73f90941edd43d38a6b3c98bb608b5/index.js#L120"
+        ]
+      }
+    },
+    "types": {
+      "$comment": "About the possible types for option values",
+      "flag": {
+        "$comment": "Can an option be passed without value to set it to true?",
+        "configurable": {
+          "node ./dump.js --flag": {
+            "value": {
+              "options": {
+                "flag": true
+              }
+            }
+          }
+        },
+        "references": [
+          "https://github.com/tj/commander.js#other-option-types-negatable-boolean-and-flagvalue",
+          "https://github.com/karfau/node-cli-arguments-options/issues/6"
+        ]
+      },
+      "boolean": {
+        "$comment": "Can an option be passed a boolean value to set it to true or false?",
+        "configurable": {},
+        "references": [
+          "https://github.com/tj/commander.js#other-option-types-negatable-boolean-and-flagvalue",
+          "https://github.com/karfau/node-cli-arguments-options/issues/6"
+        ]
+      },
+      "negated": {
+        "$comment": "Can flags be passed with a prefix to set the value to false?",
+        "configurable": {},
+        "references": [
+          "https://github.com/tj/commander.js#other-option-types-negatable-boolean-and-flagvalue"
+        ]
+      },
+      "default-string": {
+        "$comment": "Can a default string be configured when the option is passed as a flag?",
+        "configurable": {},
+        "references": [
+          "https://github.com/tj/commander.js#default-option-value",
+          "https://github.com/karfau/node-cli-arguments-options/issues/6"
+        ]
+      },
+      "string": {
+        "$comment": "Can an option be passed any value that will be treated as a string?",
+        "default": {
+          "node ./dump.js --str xyz": {
+            "value": {
+              "options": {
+                "str": "xyz"
+              }
+            }
+          },
+          "node ./dump.js --str=xyz": {
+            "value": {
+              "options": {
+                "str": "xyz"
+              }
+            }
+          }
+        },
+        "references": [
+          "https://github.com/tj/commander.js#common-option-types-boolean-and-value"
+        ]
+      },
+      "number": {
+        "$comment": "What are the options for converting values to JS number type?",
+        "code": {},
+        "references": [
+          "https://github.com/tj/commander.js#custom-option-processing",
+          "https://github.com/karfau/node-cli-arguments-options/issues/6"
+        ]
+      },
+      "integer": {
+        "$comment": "What are the options for converting values to integer values?",
+        "code": {},
+        "references": [
+          "https://github.com/tj/commander.js#custom-option-processing",
+          "https://github.com/karfau/node-cli-arguments-options/issues/6"
+        ]
+      },
+      "count": {
+        "$comment": "Is there an option to count the number of times an option(/flag) has been passed?",
+        "code": {
+          "node ./dump.js --count": {
+            "value": {
+              "options": {
+                "count": 1
+              }
+            }
+          },
+          "node ./dump.js --count --count": {
+            "value": {
+              "options": {
+                "count": 2
+              }
+            }
+          }
+        }
+      },
+      "custom": {
+        "$comment": "Is it possible to configure custom option types?",
+        "code": {},
+        "references": [
+          "https://github.com/tj/commander.js#custom-option-processing",
+          "https://github.com/karfau/node-cli-arguments-options/issues/6"
+        ]
+      },
+      "lists": {
+        "$comment": "Types for options that can result in multiple values (see options.syntax.* for details on how to pass them)",
+        "array": {
+          "$comment": "Is it possible to configure options to always be a list of values?",
+          "references": [
+            "https://github.com/tj/commander.js#custom-option-processing"
+          ],
+          "code": {
+            "node ./dump.js --arr abc": {
+              "value": {
+                "options": {
+                  "arr": [
+                    "abc"
+                  ]
+                }
+              }
+            },
+            "node ./dump.js --arr=abc": {
+              "value": {
+                "options": {
+                  "arr": [
+                    "abc"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "typed-items": {
+          "$comment": "Can the type of the items be configured?",
+          "code": {},
+          "comments": [
+            "same as `options.type.array` since the code that handles the option controls the type"
+          ]
+        }
+      }
+    },
+    "aliases": {
+      "$comment": "Aliases are the short form of options",
+      "alias": {
+        "$comment": "Can aliases be configured for options?",
+        "configurable": {}
+      },
+      "abbreviations": {
+        "$comment": "Are all possible distinct shortcuts for configured options automatically detected?",
+        "unsupported": false
+      },
+      "in-output": {
+        "$comment": "Are the aliases present as keys in the object returned?",
+        "comments": [
+          "they are present in the commander instance, but not using `.opts()`"
+        ],
+        "code": {}
+      }
+    },
+    "syntax": {
+      "$comment": "Allowed syntax for passing values for options",
+      "short-space-value": {
+        "$comment": "Is `-<single letter option> <value>` possible?",
+        "configurable": {},
+        "references": [
+          "https://github.com/tj/commander.js#options"
+        ]
+      },
+      "long-space-value": {
+        "$comment": "Is `--<multiple letter option> <value>` possible?",
+        "configurable": {},
+        "references": [
+          "https://github.com/tj/commander.js#options"
+        ]
+      },
+      "long-equal-value": {
+        "$comment": "Is `--<multiple letter option>=<value>` possible?",
+        "configurable": {},
+        "references": [
+          "https://github.com/tj/commander.js#options"
+        ]
+      },
+      "csv-value": {
+        "$comment": "Is `--<multiple letter option>=<value>[,<value,...]` possible?",
+        "code": {},
+        "references": [
+          "https://github.com/tj/commander.js#custom-option-processing"
+        ]
+      },
+      "repeated": {
+        "$comment": "Is it possible to pass an option multiple times to collect values?",
+        "references": [
+          "https://github.com/tj/commander.js#custom-option-processing"
+        ],
+        "code": {
+          "node ./dump.js --arr=abc --arr def": {
+            "value": {
+              "options": {
+                "arr": [
+                  "abc",
+                  "def"
+                ]
+              }
+            }
+          },
+          "node ./dump.js --arr=abc --arr=def": {
+            "value": {
+              "options": {
+                "arr": [
+                  "abc",
+                  "def"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "multiple": {
+        "$comment": "Is it possible to pass multiple values after a single option?",
+        "unsupported": false
+      }
+    }
+  }
+}
