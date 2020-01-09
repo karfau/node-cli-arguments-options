@@ -1,5 +1,18 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":separateMultipleMajorReleases",
+    ":rebaseStalePrs",
+    ":unpublishSafe",
+    ":automergeRequireAllStatusChecks",
+    ":automergePatch",
+    ":semanticCommits"
+  ],
+  "prConcurrentLimit": 1,
+  "packageRules": [
+    {
+      "packageNames": ["node"],
+      "rangeStrategy": "replace"
+    }
   ]
 }
