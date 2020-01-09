@@ -11,7 +11,7 @@ function execJson (cmd, opts) {
   }
   let data = {exitCode, stderr};
   try {
-    data.value = JSON.parse(stdout.trim().replace(/\\'/g, '"'))
+    data.value = JSON.parse(stdout)
   } catch (err) {
     data.error = err.message
     data.stdout = stdout;
