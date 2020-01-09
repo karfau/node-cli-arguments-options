@@ -1,12 +1,12 @@
 const {forEach} = require('./iterate')
 const {execSync} = require('child_process')
 
-function runPkg (pkg) {
+function npmInstall (pkg) {
   execSync('npm install', {stdio: 'inherit', cwd: pkg})
 }
 
 async function run (...args) {
-  await forEach(runPkg, args)
+  await forEach(npmInstall, args)
   if (!process.env.CI) {
     execSync('runex about', {stdio: 'inherit'})
   }

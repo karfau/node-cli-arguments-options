@@ -56,7 +56,7 @@ function cached (keys, resolve) {
   if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR)
   const hash = asFileName(...keys, hashFunction(resolve)) + '.json'
   const file = path.join(CACHE_DIR, hash)
-  return async (...args) => {
+  const fun = async (...args) => {
     let cache = await getCache(file)
 
     const cacheKey = args
@@ -78,6 +78,8 @@ function cached (keys, resolve) {
     flushLater(file)
     return value
   }
+  fun.name = `cached(${hashFunction(resolve)})`
+  return fun;
 }
 
 module.exports = {cached, flushAll}
