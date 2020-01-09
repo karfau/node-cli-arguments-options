@@ -88,13 +88,13 @@
   },
   "--help": {
     "raw": {
-      "error": "Unexpected token U in JSON at position 0",
+      "error": "Unexpected token U in JSON at position 1",
       "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
     }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
     "raw": {
-      "error": "Unexpected token U in JSON at position 0",
+      "error": "Unexpected token U in JSON at position 1",
       "stdout": "\nUsage: dump.js [options]\n\n\t--help, -h\n\t\tDisplays help information about this script\n\t\t'dump.js -h' or 'dump.js --help'\n\n\t--flag\n\t\t\n\n\t--count\n\t\t\n\n\t--str\n\t\t\n\n\t--arr\n\t\t\n\n\n\n"
     }
   }
