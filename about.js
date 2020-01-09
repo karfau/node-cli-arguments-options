@@ -121,6 +121,7 @@ async function _allDependencies (pkg, path = '', known = {}) {
 }
 const allDependencies = cached([__filename], _allDependencies)
 
+
 async function depInfo (pkg) {
   const usedIn = packagesIn('.')
     .filter(name => name !== pkg && existsSync(path.join('.', name, NODE_MODULES, pkg)))
@@ -144,7 +145,7 @@ async function depInfo (pkg) {
   return {deps, outdated, size, usedIn}
 }
 
-async function runPkg (pkg) {
+async function updateAbout (pkg) {
   const dependencies = await depInfo(pkg)
   console.log(JSON.stringify(dependencies, null, 2))
   writeJsonSync(
@@ -157,7 +158,7 @@ async function runPkg (pkg) {
 async function run (...args) {
   await forEach(allDependencies, TOOLS)
   await flushAll()
-  return forEach(runPkg, args)
+  return forEach(updateAbout, args)
 }
 
 module.exports = {

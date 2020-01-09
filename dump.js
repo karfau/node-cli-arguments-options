@@ -4,7 +4,7 @@ const path = require('path')
 const {forEach} = require('./iterate')
 const {execJson} = require('./execJSON')
 
-function runPkg (pkg) {
+function collectDumps (pkg) {
   writeJsonSync(
     path.join(pkg, 'dump.report.json'),
     dumps.reduce(
@@ -36,7 +36,7 @@ function runPkg (pkg) {
 }
 
 async function run (...args) {
-  return forEach(runPkg, args)
+  return forEach(collectDumps, args)
 }
 
 module.exports = {
