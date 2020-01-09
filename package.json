@@ -9,7 +9,7 @@
     "postinstall": "runex install.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Christian Bewernitz <coder@karfau.de>",
   "license": "ISC",
   "devDependencies": {
     "@types/fs-extra": "8.0.1",

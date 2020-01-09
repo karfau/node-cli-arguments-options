@@ -21,6 +21,10 @@ jobs:
       run: |
         npm ci
         npm run dump
-        npm run about
       env:
         CI: true
+    - name: ensure clean workspace
+      run: |
+        git add . # make sure line endings are sanitized by git
+        git diff HEAD --exit-code
+    - run: npm run about
