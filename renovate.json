@@ -8,6 +8,7 @@
     ":automergePatch",
     ":semanticCommits"
   ],
+  "prCreation": "not-pending",
   "prConcurrentLimit": 1,
   "packageRules": [
     {
