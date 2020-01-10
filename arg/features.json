@@ -6,16 +6,66 @@
     "unknown": {
       "$comment": "Describes how options are treated that have not been configured but are present in argv",
       "exit": {
-        "$comment": "Can parsing unknown options cause the process to exit?"
+        "$comment": "Can parsing unknown options cause the process to exit?",
+        "default": {
+          "node ./dump.js --unknown": {
+            "exitCode": 1,
+            "stderr": "Error: Unknown or unexpected option: --unknown"
+          }
+        },
+        "comments": [
+          "It actually throws an error, so you can catch it and check it's code."
+        ]
       },
       "generic": {
-        "$comment": "Will unknown options be present in the parsed output?"
+        "$comment": "Will unknown options be present in the parsed output?",
+        "configurable": {
+          "arg({}, {permissive:true, argv: ['--unknown']})": {
+            "value": {
+              "_": [
+                "--unknown"
+              ]
+            }
+          }
+        },
+        "code": {
+          "node ./readme.arg_unknown_option.js --unknown": "ARG_UNKNOWN_OPTION"
+
+
+        },
+        "references": [
+          "https://github.com/zeit/arg#arg_unknown_option"
+        ]
       },
       "handler": {
-        "$comment": "Is it possible to configure a method that will be invoked for unknown options?"
+        "$comment": "Is it possible to configure a method that will be invoked for unknown options?",
+        "configurable": {
+          "arg({}, {permissive:true, argv: ['--unknown']})": {
+            "value": {
+              "_": [
+                "--unknown"
+              ]
+            }
+          }
+        },
+        "code": {
+          "node ./readme.arg_unknown_option.js --unknown": "ARG_UNKNOWN_OPTION"
+        },
+        "references": [
+          "https://github.com/zeit/arg#arg_unknown_option"
+        ]
       },
       "throws": {
-        "$comment": "Can parsing unknown options cause the process to throw an Error?"
+        "$comment": "Can parsing unknown options cause the process to throw an Error?",
+        "default": {
+          "node ./dump.js --unknown": {
+            "exitCode": 1,
+            "stderr": "Error: Unknown or unexpected option: --unknown"
+          }
+        },
+        "references": [
+          "https://github.com/zeit/arg#arg_unknown_option"
+        ]
       }
     },
     "types": {
@@ -33,15 +83,42 @@
         }
       },
       "boolean": {
-        "$comment": "Can an option be passed a boolean value to set it to true or false?"
+        "$comment": "Can an option be passed a boolean value to set it to true or false?",
+        "code": {
+          "node ./dump.js --bool=true": {
+            "value": {
+              "options": {
+                "--bool": true
+              }
+            }
+          },
+          "node ./dump.js --bool=false": {
+            "value": {
+              "options": {
+                "--bool": false
+              }
+            }
+          }
+        }
       },
       "negated": {
         "$comment": "Can flags be passed with a prefix to set the value to false?",
-        "unsupported": false
+        "unsupported": true,
+        "comments": [
+          "I tried to use `arg.flag((_, name) => name === '--neg')` with an alias but `name` is always the non alias.",
+          "I had no more ideas beside (tricky) postprocessing of both --neg and --no-neg flags."
+        ]
       },
       "default-string": {
         "$comment": "Can a default string be configured when the option is passed as a flag?",
-        "code": {}
+        "unsupported": true,
+        "comments": [
+          "Options can either be a flag (using `Boolean` or `arg.flag`) or receive values, not both.",
+          "I didn't expect that when reading the docs."
+        ],
+        "references": [
+          "https://github.com/zeit/arg#usage"
+        ]
       },
       "string": {
         "$comment": "Can an option be passed any value that will be treated as a string?",
@@ -63,10 +140,48 @@
         }
       },
       "number": {
-        "$comment": "What are the options for converting values to JS number type?"
+        "$comment": "What are the options for converting values to JS number type?",
+        "configurable": {
+          "node ./dump.js --num 0.5": {
+            "value": {
+              "options": {
+                "--num": 0.5
+              }
+            }
+          },
+          "node ./dump.js --num=-1.0": {
+            "value": {
+              "options": {
+                "--num": -1.0
+              }
+            }
+          }
+        },
+        "references": [
+          "https://github.com/zeit/arg/issues/52"
+        ]
       },
       "integer": {
-        "$comment": "What are the options for converting values to integer values?"
+        "$comment": "What are the options for converting values to integer values?",
+        "configurable": {
+          "node ./dump.js --int 100": {
+            "value": {
+              "options": {
+                "--int": 100
+              }
+            }
+          },
+          "node ./dump.js --int=-123": {
+            "value": {
+              "options": {
+                "--int": -123
+              }
+            }
+          }
+        },
+        "references": [
+          "https://github.com/zeit/arg/issues/52"
+        ]
       },
       "count": {
         "$comment": "Is there an option to count the number of times an option(/flag) has been passed?",
@@ -88,49 +203,129 @@
         }
       },
       "custom": {
-        "$comment": "Is it possible to configure custom option types?"
+        "$comment": "Is it possible to configure custom option types?",
+        "code": {
+          "node ./dump.js --date=2019-12-31": {
+            "value": {
+              "options": {
+                "--date": 1577750400000
+              }
+            }
+          }
+        }
       },
       "lists": {
         "$comment": "Types for options that can result in multiple values (see options.syntax.* for details on how to pass them)",
         "array": {
-          "$comment": "Is it possible to configure options to always be a list of values?"
+          "$comment": "Is it possible to configure options to always be a list of values?",
+          "configurable": {
+            "node ./dump.js --arr abc": {
+              "value": {
+                "options": {
+                  "--arr": [
+                    "abc"
+                  ]
+                }
+              }
+            },
+            "node ./dump.js --arr=abc": {
+              "value": {
+                "options": {
+                  "--arr": [
+                    "abc"
+                  ]
+                }
+              }
+            },
+            "node ./dump.js --arr=abc --arr def": {
+              "value": {
+                "options": {
+                  "--arr": [
+                    "abc",
+                    "def"
+                  ]
+                }
+              }
+            },
+            "node ./dump.js --arr=abc --arr=def": {
+              "value": {
+                "options": {
+                  "--arr": [
+                    "abc",
+                    "def"
+                  ]
+                }
+              }
+            }
+          }
         },
         "typed-items": {
-          "$comment": "Can the type of the items be configured?"
+          "$comment": "Can the type of the items be configured?",
+          "configurable": {},
+          "comments": [
+            "Just wrapping the function to create element into an array creates any typed values."
+          ],
+          "references": [
+            "https://github.com/zeit/arg#usage"
+          ]
         }
       }
     },
     "aliases": {
       "$comment": "Aliases are the short form of options",
       "alias": {
-        "$comment": "Can aliases be configured for options?"
+        "$comment": "Can aliases be configured for options?",
+        "configurable": {
+          "arg({'--arg': Boolean, '-a': '--arg'},{argv:['-a']})": {
+            "value": {
+              "--arg": true
+            }
+          }
+        }
       },
       "abbreviations": {
-        "$comment": "Are all possible distinct shortcuts for configured options automatically detected?"
+        "$comment": "Are all possible distinct shortcuts for configured options automatically detected?",
+        "unsupported": true,
+        "comments": [
+          "could be achieved by mapping all aliases, e.g. by using a tool"
+        ]
       },
       "in-output": {
-        "$comment": "Are the aliases present as keys in the object returned?"
+        "$comment": "Are the aliases present as keys in the object returned?",
+        "unsupported": true,
+        "comments": [
+          "see output of option.aliases.alias"
+        ]
       }
     },
     "syntax": {
       "$comment": "Allowed syntax for passing values for options",
       "short-space-value": {
-        "$comment": "Is `-<single letter option> <value>` possible?"
+        "$comment": "Is `-<single letter option> <value>` possible?",
+        "default": {}
       },
       "long-space-value": {
-        "$comment": "Is `--<multiple letter option> <value>` possible?"
+        "$comment": "Is `--<multiple letter option> <value>` possible?",
+        "default": {}
       },
       "long-equal-value": {
-        "$comment": "Is `--<multiple letter option>=<value>` possible?"
+        "$comment": "Is `--<multiple letter option>=<value>` possible?",
+        "default": {}
       },
       "csv-value": {
-        "$comment": "Is `--<multiple letter option>=<value>[,<value,...]` possible?"
+        "$comment": "Is `--<multiple letter option>=<value>[,<value,...]` possible?",
+        "code": {},
+        "comments": [
+          "can be implemented as a custom type"
+        ]
       },
       "repeated": {
-        "$comment": "Is it possible to pass an option multiple times to collect values?"
+        "$comment": "Is it possible to pass an option multiple times to collect values?",
+        "configurable": {}
       },
       "multiple": {
-        "$comment": "Is it possible to pass multiple values after a single option?"
+        "$comment": "Is it possible to pass multiple values after a single option?",
+        "unsupported": false
       }
     }
   }
