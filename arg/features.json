@@ -117,7 +117,8 @@
           "I didn't expect that when reading the docs."
         ],
         "references": [
-          "https://github.com/zeit/arg#usage"
+          "https://github.com/zeit/arg#usage",
+          "https://github.com/zeit/arg/issues/43"
         ]
       },
       "string": {
