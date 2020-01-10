@@ -16,7 +16,7 @@
       "uniqueItems": true
     },
     "tests": {
-      "description": "an executable test that proves the availability, the keys are the commands to execute, the values the expected output",
+      "description": "executable tests that prove the availability, the keys are the code/command to execute, the values the expected output",
       "oneOf": [
         {
           "description": "the expected output from the command/eval (see ./execJson.js)",
@@ -110,11 +110,11 @@
           "description": "Describes how options are treated that have not been configured but are present in argv",
           "properties": {
             "exit": {
-              "description": "Can parsing unknown options cause the process to exit?",
+              "description": "Can parsing unknown options cause a call to `process.exit(n>0)`?",
               "$ref": "#feature"
             },
             "generic": {
-              "description": "Will unknown options be present in the parsed output?",
+              "description": "Can unknown options be present in the parsed output?",
               "$ref": "#feature"
             },
             "handler": {

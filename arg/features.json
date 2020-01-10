@@ -6,7 +6,7 @@
     "unknown": {
       "$comment": "Describes how options are treated that have not been configured but are present in argv",
       "exit": {
-        "$comment": "Can parsing unknown options cause the process to exit?",
+        "$comment": "Can parsing unknown options cause a call to `process.exit(n>0)`?",
         "default": {
           "node ./dump.js --unknown": {
             "exitCode": 1,
@@ -18,7 +18,7 @@
         ]
       },
       "generic": {
-        "$comment": "Will unknown options be present in the parsed output?",
+        "$comment": "Can unknown options be present in the parsed output?",
         "configurable": {
           "arg({}, {permissive:true, argv: ['--unknown']})": {
             "value": {
@@ -30,8 +30,6 @@
         },
         "code": {
           "node ./readme.arg_unknown_option.js --unknown": "ARG_UNKNOWN_OPTION"
-
-
         },
         "references": [
           "https://github.com/zeit/arg#arg_unknown_option"
@@ -153,7 +151,7 @@
           "node ./dump.js --num=-1.0": {
             "value": {
               "options": {
-                "--num": -1.0
+                "--num": -1
               }
             }
           }

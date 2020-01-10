@@ -6,10 +6,10 @@
     "unknown": {
       "$comment": "Describes how options are treated that have not been configured but are present in argv",
       "exit": {
-        "$comment": "Can parsing unknown options cause the process to exit?"
+        "$comment": "Can parsing unknown options cause a call to `process.exit(n>0)`?"
       },
       "generic": {
-        "$comment": "Will unknown options be present in the parsed output?"
+        "$comment": "Can unknown options be present in the parsed output?"
       },
       "handler": {
         "$comment": "Is it possible to configure a method that will be invoked for unknown options?"
