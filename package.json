@@ -9,7 +9,8 @@
     "features": "runex features.js",
     "postinstall": "runex install.js",
     "pretest": "npm --silent run dump",
-    "test": "runex test.js"
+    "test": "runex test.js",
+    "dev": "nodemon ./node_modules/.bin/runex test.js"
   },
   "keywords": [],
   "author": "Christian Bewernitz <coder@karfau.de>",
@@ -24,6 +25,7 @@
     "dotenv": "8.2.0",
     "fs-extra": "8.1.0",
     "lodash": "4.17.15",
+    "nodemon": "2.0.2",
     "pacote": "10.3.0",
     "runex": "0.3.6",
     "tcompare": "5.0.1"
