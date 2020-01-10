@@ -1,6 +1,7 @@
 const axios = require('axios')
+const camelcase = require('camelcase')
 const {readJsonSync} = require('fs-extra/lib/json')
-const {get} = require('lodash/object')
+const {get, pickBy} = require('lodash/object')
 const {join} = require('path')
 const {hasStrict} = require('tcompare')
 
@@ -27,6 +28,7 @@ const FeatureCollector = {
 }
 
 function logFeature (path, status, {error = [], info = [], warn = []} = {}) {
+  if (isWatchMode() && error.length === 0 && warn.length === 0) return
   console.error(' ', path.join(' > '), status ? `(${status})` : '')
   error.forEach(it => console.error('   X', it))
   warn.forEach(it => console.error('   ?', it))
@@ -67,12 +69,10 @@ const verifyRefs = async (refs = [], lines) => {
 }
 
 function assertExpectedString (actual, expected) {
-  if (expected === '') {
-    throw new Error('an empty string is not a valid assertion')
-  }
+  const msg = `expected "${expected}" but was "${String(actual).replace(/\n/g, '\\n')}"`
+  if (!actual) throw new Error(`${msg} (empty)`)
+  if (expected === '') throw new Error(`(empty) ${msg}`)
   const [, regex, flags] = /^\/(.*)\/([a-z]*)$/.exec(expected) || []
-  const msg = `expected "${expected}" but was ${actual}`
-  if (!actual) throw new Error(msg)
   const matches = regex ? new RegExp(regex, flags).test(actual) : actual.includes(expected)
   if (!matches) throw new Error(msg)
 }
@@ -86,15 +86,23 @@ const verifyExecutableSpec = (pkg, spec, key, reporter) => {
     }
     for (const [cmd, expected] of entries) {
       const prefix = `${key}::"${cmd}"`
-      const result = execJson(cmd, {cwd: join('.', pkg)})
+      const safePkg = camelcase(pkg)
+      const executable = cmd.startsWith(`${safePkg}.`) || cmd.startsWith(`${safePkg}(`)
+        ? `node -e 'const ${safePkg} = require("${pkg}"); console.log(JSON.stringify(${cmd.replace(/'/g, '"')}))'`
+        : cmd
+      const result = execJson(executable, {cwd: join('.', pkg)})
       if (typeof expected === 'string') {
         try {
           assertExpectedString(result.stdout, expected)
           reporter.info(prefix)
         } catch (err) {
-          reporter.error(`${prefix}: ${err.message}`)
+          reporter.error(`${prefix}: ${err.message}`, JSON.stringify(result))
         }
       } else {
+        if (Object.keys(expected).length === 0) {
+          reporter.warn(cmd,`  wrapped: ${executable}`, `  returned: ${JSON.stringify(result)}`)
+          continue
+        }
         const checkable = result
         if (typeof expected.stdout === 'string') {
           try {
@@ -123,7 +131,7 @@ const verifyExecutableSpec = (pkg, spec, key, reporter) => {
             reporter.info(prefix)
           } else {
             reporter.error(
-              `${prefix}: diff\n${diff}\nexecJson returned\n${JSON.stringify(checkable, null, 2)}`
+              `${prefix}: diff`, diff,`  execJson: ${JSON.stringify(checkable)}`
             )
           }
         }
@@ -132,6 +140,9 @@ const verifyExecutableSpec = (pkg, spec, key, reporter) => {
   }
 }
 
+function isWatchMode() {
+  return process.env.npm_lifecycle_event === 'dev'
+}
 const Reporter = () => {
   const failed = [], specified = [], verified = []
   return {
@@ -147,6 +158,8 @@ const Reporter = () => {
           verified.length ? 'verified' :
             'unspecified'
       collector[status]++
+      collector.checks += verified.length
+      if (isWatchMode() && failed.length === 0 && specified.length === 0) return
       console.error(' ', path.join(' > '), `(${status})`)
       failed.forEach(it => console.error('  ', 'X', it))
       specified.forEach(it => console.error('  ', '?', it))
@@ -159,7 +172,9 @@ const createVerify = (validateJson) => {
   const availableFeatures = walkFeatureSchema(FeatureCollector)('')
   return async function verifyFeatures (pkg) {
     const report = {
-      features: availableFeatures.length, failed: 0, unspecified: 0, specified: 0, verified: 0
+      features: availableFeatures.length,
+      failed: 0, unspecified: 0, specified: 0, verified: 0,
+      checks: 0
     }
     const fnPkgFeatures = join('.', pkg, FN_FEATURES_JSON)
     const pkgFeatures = readJsonSync(fnPkgFeatures)
@@ -201,16 +216,17 @@ async function run (...args) {
   let unspecifiedSum = 0, specifiedSum = 0, verifiedSum = 0
   await forEach(
     // first failing package will stop checks for more packages
-    // since it's easy to run them individually or all ta once
+    // since it's easy to run them individually or all at once
     async function testFeatures (pkg) {
       const report = await verifyFeatures(pkg)
-      console.error(report)
+      console.error(JSON.stringify(pickBy(report, it => it)))
       const {features, failed, unspecified, specified, verified} = report
       if (failed > 0) {
-        throw new Error('There have been errors when verifying features')
+        throw `There have been ${failed} errors when verifying features of ${pkg}`
       }
-      if (features > verified + unspecified + specified) {
-        throw new Error('not all features have been checked')
+      const tested = verified + unspecified + specified
+      if (tested < features) {
+        throw `only ${tested} of ${features} features have been tested`
       }
       verifiedSum += verified
       specifiedSum += specified
@@ -218,7 +234,10 @@ async function run (...args) {
     },
     args
   )
-  return {unspecifiedSum, specifiedSum, verifiedSum}
+  if (args.length !== 1) {
+    return {unspecifiedSum, specifiedSum, verifiedSum}
+  }
+
 }
 
 module.exports = {
