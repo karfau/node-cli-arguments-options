@@ -93,12 +93,16 @@
   },
   "--help": {
     "raw": {
+      "exitCode": 0,
+      "stderr": false,
       "error": "Unexpected token O in JSON at position 0",
       "stdout": "Options:\n  --help     Show help                                                 [boolean]\n  --version  Show version number                                       [boolean]\n"
     }
   },
   "--flag --count --count --str=xyz --arr=abc --arr=def first second --help": {
     "raw": {
+      "exitCode": 0,
+      "stderr": false,
       "error": "Unexpected token O in JSON at position 0",
       "stdout": "Options:\n  --help     Show help                                                 [boolean]\n  --version  Show version number                                       [boolean]\n"
     }

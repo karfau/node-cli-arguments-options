@@ -82,6 +82,8 @@
   },
   "--help": {
     "raw": {
+      "exitCode": 0,
+      "stderr": false,
       "error": "Unexpected token U in JSON at position 0",
       "stdout": "Usage: dump [options] [first] [second]\n\nOptions:\n  --flag       \n  --count      counts\n  --str <val>  \n  --arr <val>  collects\n  -h, --help   output usage information\n"
     }

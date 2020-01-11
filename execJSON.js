@@ -1,7 +1,7 @@
 const {execSync} = require('child_process')
 
 function execJson (cmd, opts) {
-  let exitCode, stderr, stdout = ''
+  let exitCode = 0, stderr = false, stdout = ''
   try {
     stdout = execSync(cmd, {encoding: 'utf8', stdio: 'pipe', ...opts})
   } catch (err) {
