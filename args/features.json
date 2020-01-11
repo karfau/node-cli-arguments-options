@@ -6,7 +6,19 @@
     "unknown": {
       "$comment": "Describes how options are treated that have not been configured but are present in argv",
       "exit": {
-        "$comment": "Can parsing unknown options cause a call to `process.exit(n>0)`?"
+        "$comment": "Can parsing unknown options cause a call to `process.exit()`?",
+        "mandatory": true,
+        "comments": [
+          "In this case `args` calls `process.exit()` without any argument.",
+          "I added detect-process.exit.js to be sure that it is what happens.",
+          "I couldn't find any docs or discussion about this issue and there doesn't seem to be an option to prevent that."
+        ],
+        "default": {
+          "node -r ../lib/detect-process.exit.js ./dump.js --unknown": {
+            "exitCode": 0,
+            "stdout": "process.exit() at "
+          }
+        }
       },
       "generic": {
         "$comment": "Can unknown options be present in the parsed output?"
