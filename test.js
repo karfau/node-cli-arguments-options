@@ -69,12 +69,14 @@ const verifyRefs = async (refs = [], lines) => {
 }
 
 function assertExpectedString (actual, expected) {
-  const msg = `expected "${expected}" but was "${String(actual).replace(/\n/g, '\\n')}"`
-  if (!actual) throw new Error(`${msg} (empty)`)
-  if (expected === '') throw new Error(`(empty) ${msg}`)
+  const msg = (e = expected) => `expected "${e}" but was "${String(actual).replace(/\n/g, '\\n')}"`
+  if (!actual) throw new Error(`${msg()} (empty)`)
+  if (expected === '') throw new Error(msg())
   const [, regex, flags] = /^\/(.*)\/([a-z]*)$/.exec(expected) || []
-  const matches = regex ? new RegExp(regex, flags).test(actual) : actual.includes(expected)
-  if (!matches) throw new Error(msg)
+  const matches = regex ? RegExp(regex, flags).test(actual) : actual.includes(expected)
+  if (!matches) throw new Error(
+    msg(regex ? `RegExp(${RegExp(regex, flags)})` : expected)
+  )
 }
 
 const verifyExecutableSpec = (pkg, spec, key, reporter) => {
@@ -107,7 +109,7 @@ const verifyExecutableSpec = (pkg, spec, key, reporter) => {
         if (typeof expected.stdout === 'string') {
           try {
             assertExpectedString(result.stdout, expected.stdout)
-            reporter.info(prefix)
+            reporter.info(`${prefix}: (stdout)`)
             delete checkable.stdout
             delete expected.stdout
           } catch (err) {
@@ -125,10 +127,11 @@ const verifyExecutableSpec = (pkg, spec, key, reporter) => {
           }
         }
 
-        if (Object.keys(expected).length) {
+        const keysLeft = Object.keys(expected)
+        if (keysLeft.length) {
           const {match, diff} = hasStrict(checkable, expected)
           if (match) {
-            reporter.info(prefix)
+            reporter.info(`${prefix}: (${keysLeft.join(',')})`)
           } else {
             reporter.error(
               `${prefix}: diff`, diff,`  execJson: ${JSON.stringify(checkable)}`
