@@ -8,7 +8,7 @@ const help = false;
 // help needs to be added manually when disabled in options
 !help && args.option('help')
 const options = args.parse(
-  process.argv, {exit: {help}, help}
+  process.argv, {help}
 );
 
 // count requires custom code after parsing:
