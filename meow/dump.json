@@ -78,6 +78,8 @@
   },
   "--help": {
     "raw": {
+      "exitCode": 0,
+      "stderr": false,
       "error": "Unexpected end of JSON input",
       "stdout": "\n\n"
     }
