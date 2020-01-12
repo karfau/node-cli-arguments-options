@@ -110,7 +110,7 @@
           "description": "Describes how options are treated that have not been configured but are present in argv",
           "properties": {
             "exit": {
-              "description": "Can parsing unknown options cause a call to `process.exit(n>0)`?",
+              "description": "Can parsing unknown options cause a call to `process.exit()`?",
               "$ref": "#feature"
             },
             "generic": {
