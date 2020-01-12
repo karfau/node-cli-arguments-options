@@ -9,7 +9,7 @@ const {forEach, packagesIn} = require('./iterate')
 const NODE_MODULES = 'node_modules'
 const TOOLS = [
   'ava', 'eslint', 'express', 'jest', 'mocha', 'nodemon', 'npm', 'npx', 'nyc',
-  'prettier', 'runex', 'tap', 'ts-node', 'typescript', 'webpack'
+  'prettier', 'runex', 'stylelint', 'tap', 'ts-node', 'typescript', 'webpack'
 ]
 
 async function headContentLength (url) {
