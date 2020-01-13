@@ -28,7 +28,8 @@
           "node ./features.options.unknown.exit.js --stop --unknown --known": {
             "value": {
               "_unknown": [
-                "--unknown", "--known"
+                "--unknown",
+                "--known"
               ]
             }
           }
@@ -60,7 +61,11 @@
         "$comment": "Can an option be passed without value to set it to true?",
         "configurable": {
           "node ./dump.js --flag": {
-            "value": {"options":{"flag": true}}
+            "value": {
+              "options": {
+                "flag": true
+              }
+            }
           }
         }
       },
@@ -68,7 +73,11 @@
         "$comment": "Can an option be passed a boolean value to set it to true or false?",
         "configurable": {
           "node ./dump.js --flag true": {
-            "value": {"options":{"flag": true}}
+            "value": {
+              "options": {
+                "flag": true
+              }
+            }
           }
         },
         "comments": [
@@ -90,7 +99,11 @@
         "$comment": "Can an option be passed any value that will be treated as a string?",
         "configurable": {
           "node ./dump.js --str 5": {
-            "value": {"options":{"str": "5"}}
+            "value": {
+              "options": {
+                "str": "5"
+              }
+            }
           }
         }
       },
@@ -98,10 +111,18 @@
         "$comment": "What are the options for converting values to JS number type?",
         "configurable": {
           "node ./dump.js --num 0.5": {
-            "value": {"options":{"num": 0.5}}
+            "value": {
+              "options": {
+                "num": 0.5
+              }
+            }
           },
           "node ./dump.js --num=-1.0": {
-            "value": {"options":{"num": -1}}
+            "value": {
+              "options": {
+                "num": -1
+              }
+            }
           }
         }
       },
@@ -109,10 +130,18 @@
         "$comment": "What are the options for converting values to integer values?",
         "configurable": {
           "node ./dump.js --int 100": {
-            "value": {"options":{"int": 100}}
+            "value": {
+              "options": {
+                "int": 100
+              }
+            }
           },
           "node ./dump.js --int=-123.5": {
-            "value": {"options":{"int": -123}}
+            "value": {
+              "options": {
+                "int": -123
+              }
+            }
           }
         }
       },
@@ -126,7 +155,13 @@
       "custom": {
         "$comment": "Is it possible to configure custom option types?",
         "code": {
-          "node ./dump.js --date 2019-12-31": {"value":{"options":{"date":1577750400000}}}
+          "node ./dump.js --date 2019-12-31": {
+            "value": {
+              "options": {
+                "date": 1577750400000
+              }
+            }
+          }
         },
         "references": [
           "https://github.com/75lb/command-line-args/wiki/Option-definition-reference#module_definition--OptionDefinition.OptionDefinition+type",
