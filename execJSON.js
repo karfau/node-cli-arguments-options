@@ -13,7 +13,9 @@ function execJson (cmd, opts) {
   try {
     data.value = JSON.parse(stdout)
   } catch (err) {
-    data.error = err.message
+    if (stdout) {
+      data.error = err.message
+    }
     data.stdout = stdout;
   }
   return data
