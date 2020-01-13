@@ -171,44 +171,168 @@
       "lists": {
         "$comment": "Types for options that can result in multiple values (see options.syntax.* for details on how to pass them)",
         "array": {
-          "$comment": "Is it possible to configure options to always be a list of values?"
+          "$comment": "Is it possible to configure options to always be a list of values?",
+          "configurable": {
+            "node ./dump.js --arr abc": {
+              "value": {
+                "options": {
+                  "arr": [
+                    "abc"
+                  ]
+                }
+              }
+            },
+            "node ./dump.js --arr=abc": {
+              "value": {
+                "options": {
+                  "arr": [
+                    "abc"
+                  ]
+                }
+              }
+            },
+            "node ./dump.js --arr=abc --arr def": {
+              "value": {
+                "options": {
+                  "arr": [
+                    "abc",
+                    "def"
+                  ]
+                }
+              }
+            },
+            "node ./dump.js --arr=abc --arr=def": {
+              "value": {
+                "options": {
+                  "arr": [
+                    "abc",
+                    "def"
+                  ]
+                }
+              }
+            }
+          },
+          "references": [
+            "https://github.com/75lb/command-line-args/wiki/Notation-rules",
+            "https://github.com/75lb/command-line-args/wiki/Greedy-multiples",
+            "https://github.com/75lb/command-line-args/wiki/Lazy-multiples"
+          ]
         },
         "typed-items": {
-          "$comment": "Can the type of the items be configured?"
+          "$comment": "Can the type of the items be configured?",
+          "mandatory": true,
+          "comments": [
+            "it actually has to be configured, for examples check `options.types.lists.array`"
+          ],
+          "references": [
+            "https://github.com/75lb/command-line-args/wiki/Notation-rules",
+            "https://github.com/75lb/command-line-args/wiki/Greedy-multiples",
+            "https://github.com/75lb/command-line-args/wiki/Lazy-multiples"
+          ]
         }
       }
     },
     "aliases": {
       "$comment": "Aliases are the short form of options",
       "alias": {
-        "$comment": "Can aliases be configured for options?"
+        "$comment": "Can aliases be configured for options?",
+        "configurable": {
+          "node ./dump.js -c": {
+            "value": {
+              "options": {
+                "count": 1
+              }
+            }
+          }
+        },
+        "references": [
+          "https://github.com/75lb/command-line-args/blob/master/doc/option-definition.md#module_option-definition--OptionDefinition+alias"
+        ]
       },
       "abbreviations": {
-        "$comment": "Are all possible distinct shortcuts for configured options automatically detected?"
+        "$comment": "Are all possible distinct shortcuts for configured options automatically detected?",
+        "unsupported": false
       },
       "in-output": {
-        "$comment": "Are the aliases present as keys in the object returned?"
+        "$comment": "Are the aliases present as keys in the object returned?",
+        "unsupported": false,
+        "comments": [
+          "see expected value of `options.aliases.alias`"
+        ]
       }
     },
     "syntax": {
       "$comment": "Allowed syntax for passing values for options",
       "short-space-value": {
-        "$comment": "Is `-<single letter option> <value>` possible?"
+        "$comment": "Is `-<single letter option> <value>` possible?",
+        "configurable": {}
       },
       "long-space-value": {
-        "$comment": "Is `--<multiple letter option> <value>` possible?"
+        "$comment": "Is `--<multiple letter option> <value>` possible?",
+        "configurable": {}
       },
       "long-equal-value": {
-        "$comment": "Is `--<multiple letter option>=<value>` possible?"
+        "$comment": "Is `--<multiple letter option>=<value>` possible?",
+        "configurable": {}
       },
       "csv-value": {
-        "$comment": "Is `--<multiple letter option>=<value>[,<value,...]` possible?"
+        "$comment": "Is `--<multiple letter option>=<value>[,<value,...]` possible?",
+        "code": {},
+        "comments": [
+          "can be implemented as a custom type"
+        ],
+        "references": [
+          "https://github.com/75lb/command-line-args/blob/master/doc/option-definition.md#module_option-definition--OptionDefinition+type"
+        ]
       },
       "repeated": {
-        "$comment": "Is it possible to pass an option multiple times to collect values?"
+        "$comment": "Is it possible to pass an option multiple times to collect values?",
+        "configurable": {
+          "node ./dump.js --arr=abc --arr def": {
+            "value": {
+              "options": {
+                "arr": [
+                  "abc",
+                  "def"
+                ]
+              }
+            }
+          },
+          "node ./dump.js --arr=abc --arr=def": {
+            "value": {
+              "options": {
+                "arr": [
+                  "abc",
+                  "def"
+                ]
+              }
+            }
+          }
+        },
+        "references": [
+          "https://github.com/75lb/command-line-args/wiki/Notation-rules",
+          "https://github.com/75lb/command-line-args/wiki/Greedy-multiples",
+          "https://github.com/75lb/command-line-args/wiki/Lazy-multiples"
+        ]
       },
       "multiple": {
-        "$comment": "Is it possible to pass multiple values after a single option?"
+        "$comment": "Is it possible to pass multiple values after a single option?",
+        "configurable": {
+          "node ./dump.js --mult abc def": {
+            "value": {
+              "options": {
+                "mult": [
+                  "abc",
+                  "def"
+                ]
+              }
+            }
+          }
+        },
+        "references": [
+          "https://github.com/75lb/command-line-args/wiki/Notation-rules",
+          "https://github.com/75lb/command-line-args/wiki/Greedy-multiples"
+        ]
       }
     }
   }
