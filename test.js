@@ -70,8 +70,8 @@ const verifyRefs = async (refs = [], lines) => {
 
 function assertExpectedString (actual, expected) {
   const msg = (e = expected) => `expected "${e}" but was "${String(actual).replace(/\n/g, '\\n')}"`
-  if (!actual) throw new Error(`${msg()} (empty)`)
-  if (expected === '') throw new Error(msg())
+  if (expected === '') throw new Error(`${msg()} (empty is not a valid assertion)`)
+  if (!actual) throw new Error(`${msg()} (empty - assertion not possible)`)
   const [, regex, flags] = /^\/(.*)\/([a-z]*)$/.exec(expected) || []
   const matches = regex ? RegExp(regex, flags).test(actual) : actual.includes(expected)
   if (!matches) throw new Error(
@@ -102,7 +102,7 @@ const verifyExecutableSpec = (pkg, spec, key, reporter) => {
         }
       } else {
         if (Object.keys(expected).length === 0) {
-          reporter.warn(cmd,`  wrapped: ${executable}`, `  returned: ${JSON.stringify(result)}`)
+          reporter.warn(cmd,`  executed: ${executable}`, `  returned: ${JSON.stringify(result)}`)
           continue
         }
         const checkable = result
