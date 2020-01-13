@@ -260,7 +260,7 @@
         },
         "typed-items": {
           "$comment": "Can the type of the items be configured?",
-          "configurable": {},
+          "mandatory": true,
           "comments": [
             "Just wrapping the function to create element into an array creates any typed values."
           ],
