@@ -14,6 +14,8 @@ dashdash.addOptionType({
 const config = {options: [
   {name: 'flag', type: 'bool'},
   {name: 'count', type: 'count'},
+  {name: 'int', type: 'integer'},
+  {name: 'num', type: 'number'},
   {name: 'str', type: 'string'},
   {name: 'arr', type: 'arrayOfString'},
   {name: 'help', type: 'bool'}

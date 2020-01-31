@@ -6,54 +6,185 @@
     "unknown": {
       "$comment": "Describes how options are treated that have not been configured but are present in argv",
       "exit": {
-        "$comment": "Can parsing unknown options cause a call to `process.exit()`?"
+        "$comment": "Can parsing unknown options cause a call to `process.exit()`?",
+        "code": {
+          "node ./dump.js --unknown": {
+            "exitCode": 1,
+            "stderr": "Error: unknown option"
+          }
+        },
+        "comments": [
+          "The library is not doing this on purpose, but it can be done by catching the error and exiting instead."
+        ],
+        "references": [
+          "https://github.com/trentm/node-dashdash#why"
+        ]
       },
       "generic": {
-        "$comment": "Can unknown options be present in the parsed output?"
+        "$comment": "Can unknown options be present in the parsed output?",
+        "configurable": {
+          "node ./features.options.unknown.js --unkown": {
+            "value": {
+              "_args": [
+                "--unkown"
+              ]
+            }
+          }
+        },
+        "references": [
+          "https://github.com/trentm/node-dashdash#parser-config"
+        ]
       },
       "handler": {
-        "$comment": "Is it possible to configure a method that will be invoked for unknown options?"
+        "$comment": "Is it possible to configure a method that will be invoked for unknown options?",
+        "unsupported": false
       },
       "throws": {
-        "$comment": "Can parsing unknown options cause the process to throw an Error?"
+        "$comment": "Can parsing unknown options cause the process to throw an Error?",
+        "default": {
+          "node ./dump.js --unknown": {
+            "exitCode": 1,
+            "stderr": "Error: unknown option"
+          }
+        }
       }
     },
     "types": {
       "$comment": "About the possible types for option values",
       "flag": {
-        "$comment": "Can an option be passed without value to set it to true?"
+        "$comment": "Can an option be passed without value to set it to true?",
+        "configurable": {
+          "node ./dump.js --flag": {
+            "value": {
+              "options": {
+                "flag": true
+              }
+            }
+          }
+        }
       },
       "boolean": {
-        "$comment": "Can an option be passed a boolean value to set it to true or false?"
+        "$comment": "Can an option be passed a boolean value to set it to true or false?",
+        "code": {},
+        "comments": [
+          "there is an example in the docs how to do that using custom types"
+        ],
+        "references": [
+          "https://github.com/trentm/node-dashdash#custom-option-types"
+        ]
       },
       "negated": {
-        "$comment": "Can flags be passed with a prefix to set the value to false?"
+        "$comment": "Can flags be passed with a prefix to set the value to false?",
+        "unsupported": true,
+        "references": [
+          "https://github.com/trentm/node-dashdash/pull/14"
+        ]
       },
       "default-string": {
-        "$comment": "Can a default string be configured when the option is passed as a flag?"
+        "$comment": "Can a default string be configured when the option is passed as a flag?",
+        "unsupported": true,
+        "comments": [
+          "`addOptionType` can be configured with `takesArg`(boolean),so it seems it's either with or without value."
+        ],
+        "references": [
+          "https://github.com/trentm/node-dashdash#custom-option-types"
+        ]
       },
       "string": {
-        "$comment": "Can an option be passed any value that will be treated as a string?"
+        "$comment": "Can an option be passed any value that will be treated as a string?",
+        "configurable": {
+          "node ./dump.js --str xyz": {
+            "value": {
+              "options": {
+                "str": "xyz"
+              }
+            }
+          }
+        }
       },
       "number": {
-        "$comment": "What are the options for converting values to JS number type?"
+        "$comment": "What are the options for converting values to JS number type?",
+        "configurable": {
+          "node ./dump.js --num 0.5": {
+            "value": {
+              "options": {
+                "num": 0.5
+              }
+            }
+          },
+          "node ./dump.js --num=-1.0": {
+            "value": {
+              "options": {
+                "num": -1
+              }
+            }
+          }
+        }
       },
       "integer": {
-        "$comment": "What are the options for converting values to integer values?"
+        "$comment": "What are the options for converting values to integer values?",
+        "configurable": {
+          "node ./dump.js --int 100": {
+            "value": {
+              "options": {
+                "int": 100
+              }
+            }
+          },
+          "node ./dump.js --int=-123.5": {
+            "exitCode": 1,
+            "stderr": "is not an integer"
+          },
+          "node ./dump.js --int -5": {
+            "value": {
+              "options": {
+                "int": -5
+              }
+            }
+          }
+        }
       },
       "count": {
-        "$comment": "Is there an option to count the number of times an option(/flag) has been passed?"
+        "$comment": "Is there an option to count the number of times an option(/flag) has been passed?",
+        "code": {
+          "node ./dump.js --count": {
+            "value": {
+              "options": {
+                "count": 1
+              }
+            }
+          },
+          "node ./dump.js --count --count --count": {
+            "value": {
+              "options": {
+                "count": 3
+              }
+            }
+          }
+        }
       },
       "custom": {
-        "$comment": "Is it possible to configure custom option types?"
+        "$comment": "Is it possible to configure custom option types?",
+        "code": {},
+        "references": [
+          "https://github.com/trentm/node-dashdash#custom-option-types"
+        ]
       },
       "lists": {
         "$comment": "Types for options that can result in multiple values (see options.syntax.* for details on how to pass them)",
         "array": {
-          "$comment": "Is it possible to configure options to always be a list of values?"
+          "$comment": "Is it possible to configure options to always be a list of values?",
+          "configurable": {},
+          "references": [
+            "https://github.com/trentm/node-dashdash#option-specs"
+          ]
         },
         "typed-items": {
-          "$comment": "Can the type of the items be configured?"
+          "$comment": "Can the type of the items be configured?",
+          "mandatory": true,
+          "references": [
+            "https://github.com/trentm/node-dashdash#option-specs"
+          ]
         }
       }
     },
@@ -88,6 +219,19 @@
       },
       "multiple": {
         "$comment": "Is it possible to pass multiple values after a single option?"
+      },
+      "default-value": {
+        "$comment": "Can a 'default' value be configured that will be int the parsed output if the option was not passed?",
+        "configurable": {},
+        "references": [
+          "https://github.com/trentm/node-dashdash#option-specs",
+          "https://github.com/trentm/node-dashdash/issues/43",
+          "https://github.com/trentm/node-dashdash/issues/23"
+        ],
+        "comments": [
+          "There is a known 'issue' that the default value is allowed to not the specified type. Could also be seen as a feature.",
+          "This feature is not yet defined in the schema, see https://github.com/karfau/node-cli-arguments-options/issues/16."
+        ]
       }
     }
   }
