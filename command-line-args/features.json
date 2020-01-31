@@ -117,10 +117,17 @@
               }
             }
           },
-          "node ./dump.js --num=-1.0": {
+          "node ./dump.js --num -123.5": {
             "value": {
               "options": {
-                "num": -1
+                "num": -123.5
+              }
+            }
+          },
+          "node ./dump.js --num -0.5": {
+            "value": {
+              "options": {
+                "num": -0.5
               }
             }
           }
@@ -140,6 +147,13 @@
             "value": {
               "options": {
                 "int": -123
+              }
+            }
+          },
+          "node ./dump.js --int -5": {
+            "value": {
+              "options": {
+                "int": -5
               }
             }
           }
