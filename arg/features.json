@@ -154,6 +154,10 @@
                 "--num": -1
               }
             }
+          },
+          "node ./dump.js --num -123.5": {
+            "exitCode": 1,
+            "stderr": "Option requires argument: --num"
           }
         },
         "references": [
@@ -176,6 +180,17 @@
                 "--int": -123
               }
             }
+          },
+          "node ./dump.js --int=-5.9": {
+            "value": {
+              "options": {
+                "--int": -5
+              }
+            }
+          },
+          "node ./dump.js --int -123": {
+            "exitCode": 1,
+            "stderr": "Option requires argument: --int"
           }
         },
         "references": [
