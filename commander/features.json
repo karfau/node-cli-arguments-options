@@ -116,7 +116,29 @@
       },
       "number": {
         "$comment": "What are the options for converting values to JS number type?",
-        "code": {},
+        "code": {
+          "node ./dump.js --num 0.5": {
+            "value": {
+              "options": {
+                "num": 0.5
+              }
+            }
+          },
+          "node ./dump.js --num=-1.0": {
+            "value": {
+              "options": {
+                "num": -1
+              }
+            }
+          },
+          "node ./dump.js --num -123.5": {
+            "value": {
+              "options": {
+                "num": -123.5
+              }
+            }
+          }
+        },
         "references": [
           "https://github.com/tj/commander.js#custom-option-processing",
           "https://github.com/karfau/node-cli-arguments-options/issues/6"
@@ -124,7 +146,36 @@
       },
       "integer": {
         "$comment": "What are the options for converting values to integer values?",
-        "code": {},
+        "code": {
+          "node ./dump.js --int 100": {
+            "value": {
+              "options": {
+                "int": 100
+              }
+            }
+          },
+          "node ./dump.js --int=-123": {
+            "value": {
+              "options": {
+                "int": -123
+              }
+            }
+          },
+          "node ./dump.js --int=-5.9": {
+            "value": {
+              "options": {
+                "int": -5
+              }
+            }
+          },
+          "node ./dump.js --int -123": {
+            "value": {
+              "options": {
+                "int": -123
+              }
+            }
+          }
+        },
         "references": [
           "https://github.com/tj/commander.js#custom-option-processing",
           "https://github.com/karfau/node-cli-arguments-options/issues/6"
