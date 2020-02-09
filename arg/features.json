@@ -156,8 +156,12 @@
             }
           },
           "node ./dump.js --num -123.5": {
-            "exitCode": 1,
-            "stderr": "Option requires argument: --num"
+            "value": {
+              "arguments": [],
+              "options": {
+                "--num": -123.5
+              }
+            }
           }
         },
         "references": [
