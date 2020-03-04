@@ -51,7 +51,7 @@ const verifyBooleanSpec = (spec, key, lines) => {
 }
 
 const referenceReachable = cached([__filename, TODAY], async (url) =>
-  (await axios.head(url, {validateStatus: s => s < 400})).status)
+  (await axios.head(url, {validateStatus: s => s < 400, headers: {accept: '*/*'}})).status)
 
 const verifyRefs = async (refs = [], lines) => {
   let result = true
