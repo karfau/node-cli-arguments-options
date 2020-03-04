@@ -6,7 +6,8 @@
       "yargs-parser"
     ],
     "outdated": [
-      "decamelize@1.2.0...4.0.0"
+      "decamelize@1.2.0...4.0.0",
+      "yargs-parser@16.1.0...18.0.0"
     ],
     "size": 21753,
     "usedIn": [
