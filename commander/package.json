@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "commander": "4.1.1"
+    "commander": "5.1.0"
   }
 }
