@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mri": "1.1.5"
+    "mri": "1.1.6"
   }
 }
