@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "meow": "7.0.1"
+    "meow": "7.1.1"
   }
 }
