@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "dashdash": "1.14.1"
+    "dashdash": "2.0.0"
   }
 }
