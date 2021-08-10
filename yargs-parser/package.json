@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "yargs-parser": "19.0.4"
+    "yargs-parser": "20.2.9"
   },
   "dependencies": {},
   "description": ""
