@@ -28,6 +28,6 @@
     "nodemon": "2.0.12",
     "pacote": "11.1.14",
     "runex": "0.4.1",
-    "tcompare": "5.0.2"
+    "tcompare": "5.0.6"
   }
 }
