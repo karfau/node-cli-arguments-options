@@ -16,7 +16,7 @@
   "author": "Christian Bewernitz <coder@karfau.de>",
   "license": "ISC",
   "devDependencies": {
-    "@types/fs-extra": "9.0.12",
+    "@types/fs-extra": "9.0.13",
     "@types/node": "13.13.26",
     "ajv": "6.12.6",
     "axios": "0.21.2",
