@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/fs-extra": "9.0.13",
     "@types/node": "13.13.26",
-    "ajv": "6.12.6",
+    "ajv": "7.2.4",
     "axios": "0.24.0",
     "camelcase": "6.2.0",
     "diff": "4.0.2",
