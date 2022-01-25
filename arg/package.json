@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "arg": "4.1.3"
+    "arg": "5.0.1"
   }
 }
