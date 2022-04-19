@@ -19,7 +19,7 @@
     "@types/fs-extra": "9.0.13",
     "@types/node": "13.13.26",
     "ajv": "6.12.6",
-    "axios": "0.25.0",
+    "axios": "0.26.1",
     "camelcase": "6.3.0",
     "diff": "5.0.0",
     "dotenv": "8.6.0",
