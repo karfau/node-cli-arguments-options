@@ -22,7 +22,7 @@
     "axios": "0.26.1",
     "camelcase": "6.3.0",
     "diff": "5.0.0",
-    "dotenv": "13.0.1",
+    "dotenv": "14.3.2",
     "fs-extra": "9.1.0",
     "lodash": "4.17.21",
     "nodemon": "2.0.15",
